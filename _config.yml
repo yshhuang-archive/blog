@@ -25,6 +25,9 @@ github_username:  hyschn
 # Build settings
 markdown: kramdown
 theme: minima
+# theme: minimal-mistakes-jekyll
+paginate: 5 # amount of posts to show
+paginate_path: /blog/page:num
 plugins:
   - jekyll-feed
 
