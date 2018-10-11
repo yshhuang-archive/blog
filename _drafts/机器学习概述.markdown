@@ -1,7 +1,0 @@
----
-layout: post
-title:  "机器学习概述"
-# date:   2018-09-29 18:24:14 +0800
-categories: jekyll update
----
-机器学习
