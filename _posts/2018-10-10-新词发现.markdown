@@ -45,4 +45,4 @@ categories: NLP
 当取自有限的样本时，熵的公式可以表示為：
 > $$H(X)=\sum_iP(x_i)I(x_i)=-\sum_iP(x_i)\log_bP(x_i)$$
 
-对于一个词$w$，我们统计出它所有的左邻字集合$left={l_1,l_2,l_3……l_n}$，每个字在文本中出现的概率为$p(l_i)$,可以计算出$w$的左信息熵$leftEntropy=-p(l_1)\log p(l_1)-p(l_2)\log p(l_2)-p(l_3)\log p(l_3)-……-p(l_n)\log p(l_n)$，同理可求出右信息熵$rightEntropy$，取$leftEntropy$和$rightEntropy$的较小值作为最终信息熵。
+对于一个词\\(w\\) ，我们统计出它所有的左邻字集合\\(left={l_1,l_2,l_3……l_n}\\)，每个字在文本中出现的概率为\\(p(l_i)\\),可以计算出\\(w\\)的左信息熵\\(leftEntropy=-p(l_1)\log p(l_1)-p(l_2)\log p(l_2)-p(l_3)\log p(l_3)-……-p(l_n)\log p(l_n)\\)，同理可求出右信息熵\\(rightEntropy\\)，取\\(leftEntropy\\)和\\(rightEntropy\\)的较小值作为最终信息熵。
