@@ -88,9 +88,9 @@ def auto_norm(data_set):
 有时候我们并不想知道测试实例的一个具体分类，而是想知道它属于每个分类的概率是多少。这时我们可以取测试实例的K个邻居中任意分类的数量除以K，作为此分类的概率。
 
 ## 完整代码
-https://github.com/yshhuang/practice-code/tree/master/ml-in-action/02-kNN
+[https://github.com/yshhuang/practice-code/tree/master/ml-in-action/02-kNN](https://github.com/yshhuang/practice-code/tree/master/ml-in-action/02-kNN)
 
-## 参考文章：  
+## 参考文章：  
 [【量化课堂】一只兔子帮你理解 kNN](https://www.joinquant.com/post/2227)  
 [Python3《机器学习实战》学习笔记（一）：k-近邻算法(史诗级干货长文)](https://blog.csdn.net/c406495762/article/details/75172850)  
 [一文搞懂k近邻（k-NN）算法（一）](https://zhuanlan.zhihu.com/p/25994179)
