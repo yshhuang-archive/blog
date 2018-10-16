@@ -90,6 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jekyll (~> 3.8.4)
   jekyll-text-theme
   tzinfo-data
 
