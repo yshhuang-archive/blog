@@ -4,9 +4,6 @@
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
-
-## !USE TEXT THEME
-theme: jekyll-text-theme
 #
 # ,--------.      ,--.   ,--. ,--.
 # '--.  .--',---.  \  `.'  /,-'  '-.
@@ -14,13 +11,16 @@ theme: jekyll-text-theme
 #    |  |  \   --. /  .'.  \  |  |
 #    `--'   `----''--'   '--' `--'
 
+
+
+
 ## => Site Settings
 ##############################
-text_skin:  # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme:  # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : https://blog.yshhuang.top/ # the base hostname & protocol for your site e.g. https://www.someone.com
+text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : 自由之翼
+title   : Your Site Title
 description: > # this means to ignore newlines until "Language & timezone"
   Your Site Description
 
@@ -53,8 +53,8 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: yshhuang/blog
-repository_tree: gh-pages
+repository: user_name/repo_name
+repository_tree: master
 
 
 ## => Paths
@@ -112,7 +112,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: gitalk # false (default), "disqus", "gitalk", "custom"
+  provider: false # false (default), "disqus", "gitalk", "custom"
 
   ## Disqus
   disqus:
