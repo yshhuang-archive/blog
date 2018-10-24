@@ -32,3 +32,14 @@ Git for Windows自带了Linux下一些命令行工具的Windows版，注意它�
 链接：https://www.zhihu.com/question/65055974/answer/227486573
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+具体操作可以参考这篇文章:
+[体验Git Bash，在windows下的Linux命令行](https://www.jianshu.com/p/122f5bf8749e).
+同类工具还有Cmder，cygwin64
+
+2. MacOS  
+这个简单,只要买个Mac电脑就行了.Mac的终端虽然比不上Linux,但是也够用了.
+
+3. 虚拟机or双系统  
+虚拟机可以使用[vmware](https://www.vmware.com/sg.html),具体使用方法自行百度.  
+安装双系统的话,Ubuntu官网就有制作启动盘的[教程](https://www.ubuntu.com.cn/download/desktop/create-a-usb-stick-on-windows),后面怎么启动,怎么安装也请自行百度吧.🐶
