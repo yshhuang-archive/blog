@@ -80,8 +80,7 @@ categories: NLP
 <th title="Field #4">aggregation</th>
 <th title="Field #5">entropy</th>
 </tr></thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>朝花</td>
 <td>7619</td>
 <td>0.0006684535</td>
@@ -2211,3 +2210,4 @@ categories: NLP
 <td align="right">2.3849728</td>
 </tr>
 </tbody></table>
+
