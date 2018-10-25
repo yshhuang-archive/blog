@@ -72,6 +72,7 @@ categories: NLP
 
 ### 统计结果
 统计了出现频率最高的前100个新词如下：
+
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">text</th>
 <th title="Field #2">frequency</th>
@@ -790,6 +791,7 @@ categories: NLP
 下面分别是提高阈值和更改排序字段后的结果:  
 
 1.将entropy的最小值设为1.0
+
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">text</th>
 <th title="Field #2">frequency</th>
@@ -1500,6 +1502,7 @@ categories: NLP
 </tbody></table>
 
 2.按entropy从大到小排序取前100个(probability>=0.00001)
+
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">text</th>
 <th title="Field #2">frequency</th>
