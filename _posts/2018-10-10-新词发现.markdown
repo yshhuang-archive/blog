@@ -73,6 +73,7 @@ categories: NLP
 ![20181023164614](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/20181023164614.png)
 
 ### 统计结果
+
 统计了出现频率最高的前100个新词如下：   
 
 <table class="table table-bordered table-hover table-condensed">
