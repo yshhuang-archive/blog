@@ -72,5 +72,2139 @@ categories: NLP
 
 ### 统计结果
 统计了出现频率最高的前100个新词如下：
-["朝花","作者大大","咬痕","锐思","啦啦","伊凯","马蓉","要要要","林早上","呵呵呵","啦啦啦","嗯嗯","点赞","污污","千玺","芙蕾","呵呵呵呵","蛤蛤","狗粮","夏天岛","呜呜呜","考神","搞事","粗长","蛤蛤蛤","污污污","什么鬼","小莘","爆照","福利图","啪啪啪","罗真","女主","斯里","莲莲","傲娇","林路","耽美","蓝斯","啦啦啦啦","蛤蛤蛤蛤","男主","宋喆","谨斯里","水默","微博","写作业","宝强","南烟","呜呜呜呜","壁咚","懵逼","易烊千玺","搞事情","萌萌","应怜","考神保佑","单身狗","朝花惜时","签售","高冉","洛逸","老司机","微信","炫童","高仿","加油加油","镜玄","小黄文","咳咳","江哥","学生党","同款","嗷嗷嗷","晴蓝","暖男","哇哇哇","腐女","龙之谷","开车开车","闺蜜","玛丽苏","南烟斋","清英","老宫","番外","保佑保佑","狂魔","没毛病","嘿嘿嘿嘿","小仙女","鹿晗","停更","必过","秀恩爱","注意身体","部漫画","威风堂堂","小贝","柯小"]  
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">text</th>
+<th title="Field #2">frequency</th>
+<th title="Field #3">probability</th>
+<th title="Field #4">aggregation</th>
+<th title="Field #5">entropy</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>朝花</td>
+<td>7619</td>
+<td>0.0006684535</td>
+<td>714.1623</td>
+<td>2.1286788</td>
+</tr>
+<tr>
+<td>作者大大</td>
+<td>7124</td>
+<td>0.00062502467</td>
+<td>101.68125</td>
+<td>1.9219328</td>
+</tr>
+<tr>
+<td>咬痕</td>
+<td>7033</td>
+<td>0.0006170408</td>
+<td>1358.8071</td>
+<td>2.6024222</td>
+</tr>
+<tr>
+<td>锐思</td>
+<td>5265</td>
+<td>0.00046192517</td>
+<td>845.62634</td>
+<td>2.9776123</td>
+</tr>
+<tr>
+<td>啦啦</td>
+<td>5060</td>
+<td>0.00044393947</td>
+<td>195.49388</td>
+<td>1.0524662</td>
+</tr>
+<tr>
+<td>伊凯</td>
+<td>4940</td>
+<td>0.00043341127</td>
+<td>1481.1761</td>
+<td>2.8826144</td>
+</tr>
+<tr>
+<td>马蓉</td>
+<td>3983</td>
+<td>0.0003494488</td>
+<td>1295.2317</td>
+<td>2.83174</td>
+</tr>
+<tr>
+<td>要要要</td>
+<td>3812</td>
+<td>0.00033444611</td>
+<td>124.241295</td>
+<td>0.6033861</td>
+</tr>
+<tr>
+<td>林早上</td>
+<td>3311</td>
+<td>0.00029049083</td>
+<td>212.09631</td>
+<td>2.5660532</td>
+</tr>
+<tr>
+<td>呵呵呵</td>
+<td>3000</td>
+<td>0.00026320523</td>
+<td>326.23438</td>
+<td>0.76935846</td>
+</tr>
+<tr>
+<td>啦啦啦</td>
+<td>2939</td>
+<td>0.0002578534</td>
+<td>385.43735</td>
+<td>0.9371891</td>
+</tr>
+<tr>
+<td>嗯嗯</td>
+<td>2735</td>
+<td>0.00023995544</td>
+<td>179.10059</td>
+<td>0.6670491</td>
+</tr>
+<tr>
+<td>点赞</td>
+<td>2700</td>
+<td>0.0002368847</td>
+<td>114.39913</td>
+<td>2.9828775</td>
+</tr>
+<tr>
+<td>污污</td>
+<td>2501</td>
+<td>0.00021942542</td>
+<td>353.5774</td>
+<td>1.0437318</td>
+</tr>
+<tr>
+<td>千玺</td>
+<td>2446</td>
+<td>0.00021459999</td>
+<td>1941.4279</td>
+<td>2.262512</td>
+</tr>
+<tr>
+<td>芙蕾</td>
+<td>2307</td>
+<td>0.00020240482</td>
+<td>3910.159</td>
+<td>2.5435712</td>
+</tr>
+<tr>
+<td>呵呵呵呵</td>
+<td>2226</td>
+<td>0.00019529827</td>
+<td>448.6588</td>
+<td>0.50676024</td>
+</tr>
+<tr>
+<td>蛤蛤</td>
+<td>2197</td>
+<td>0.00019275396</td>
+<td>3223.9094</td>
+<td>0.8353594</td>
+</tr>
+<tr>
+<td>狗粮</td>
+<td>2190</td>
+<td>0.00019213982</td>
+<td>823.83264</td>
+<td>2.7401226</td>
+</tr>
+<tr>
+<td>夏天岛</td>
+<td>2133</td>
+<td>0.00018713891</td>
+<td>2851.0947</td>
+<td>3.0487359</td>
+</tr>
+<tr>
+<td>呜呜呜</td>
+<td>2041</td>
+<td>0.00017906728</td>
+<td>1577.987</td>
+<td>1.0952901</td>
+</tr>
+<tr>
+<td>考神</td>
+<td>1907</td>
+<td>0.00016731079</td>
+<td>121.10554</td>
+<td>1.2480384</td>
+</tr>
+<tr>
+<td>搞事</td>
+<td>1855</td>
+<td>0.00016274856</td>
+<td>297.27905</td>
+<td>1.2835702</td>
+</tr>
+<tr>
+<td>粗长</td>
+<td>1808</td>
+<td>0.00015862501</td>
+<td>586.3576</td>
+<td>0.8958081</td>
+</tr>
+<tr>
+<td>蛤蛤蛤</td>
+<td>1735</td>
+<td>0.00015222035</td>
+<td>3229.6777</td>
+<td>0.92817974</td>
+</tr>
+<tr>
+<td>污污污</td>
+<td>1708</td>
+<td>0.0001498515</td>
+<td>866.9079</td>
+<td>0.7653267</td>
+</tr>
+<tr>
+<td>什么鬼</td>
+<td>1692</td>
+<td>0.00014844775</td>
+<td>117.45499</td>
+<td>0.732285</td>
+</tr>
+<tr>
+<td>小莘</td>
+<td>1691</td>
+<td>0.00014836</td>
+<td>223.58087</td>
+<td>3.1967993</td>
+</tr>
+<tr>
+<td>爆照</td>
+<td>1641</td>
+<td>0.00014397326</td>
+<td>613.31525</td>
+<td>1.4314348</td>
+</tr>
+<tr>
+<td>福利图</td>
+<td>1625</td>
+<td>0.0001425695</td>
+<td>521.52704</td>
+<td>2.5697489</td>
+</tr>
+<tr>
+<td>啪啪啪</td>
+<td>1592</td>
+<td>0.00013967424</td>
+<td>1377.031</td>
+<td>2.1149125</td>
+</tr>
+<tr>
+<td>罗真</td>
+<td>1575</td>
+<td>0.00013818275</td>
+<td>218.23041</td>
+<td>3.151046</td>
+</tr>
+<tr>
+<td>女主</td>
+<td>1570</td>
+<td>0.00013774406</td>
+<td>103.32249</td>
+<td>3.648004</td>
+</tr>
+<tr>
+<td>斯里</td>
+<td>1489</td>
+<td>0.00013063752</td>
+<td>150.47287</td>
+<td>0.6009016</td>
+</tr>
+<tr>
+<td>莲莲</td>
+<td>1444</td>
+<td>0.00012668945</td>
+<td>1271.369</td>
+<td>2.7751904</td>
+</tr>
+<tr>
+<td>傲娇</td>
+<td>1383</td>
+<td>0.00012133761</td>
+<td>4379.5493</td>
+<td>1.7764797</td>
+</tr>
+<tr>
+<td>林路</td>
+<td>1371</td>
+<td>0.000120284785</td>
+<td>408.83185</td>
+<td>2.5821934</td>
+</tr>
+<tr>
+<td>耽美</td>
+<td>1365</td>
+<td>0.00011975838</td>
+<td>719.6315</td>
+<td>3.4154472</td>
+</tr>
+<tr>
+<td>蓝斯</td>
+<td>1328</td>
+<td>0.00011651218</td>
+<td>470.83932</td>
+<td>3.024543</td>
+</tr>
+<tr>
+<td>啦啦啦啦</td>
+<td>1323</td>
+<td>0.000116073505</td>
+<td>298.72046</td>
+<td>0.83543575</td>
+</tr>
+<tr>
+<td>蛤蛤蛤蛤</td>
+<td>1310</td>
+<td>0.00011493295</td>
+<td>3087.8882</td>
+<td>0.6837312</td>
+</tr>
+<tr>
+<td>男主</td>
+<td>1309</td>
+<td>0.000114845214</td>
+<td>107.31179</td>
+<td>3.6012008</td>
+</tr>
+<tr>
+<td>宋喆</td>
+<td>1296</td>
+<td>0.00011370466</td>
+<td>5152.2305</td>
+<td>2.5304878</td>
+</tr>
+<tr>
+<td>谨斯里</td>
+<td>1292</td>
+<td>0.000113353715</td>
+<td>446.51013</td>
+<td>2.8363857</td>
+</tr>
+<tr>
+<td>水默</td>
+<td>1285</td>
+<td>0.00011273957</td>
+<td>321.6284</td>
+<td>2.3186948</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>1272</td>
+<td>0.000111599016</td>
+<td>2229.1577</td>
+<td>3.469414</td>
+</tr>
+<tr>
+<td>写作业</td>
+<td>1265</td>
+<td>0.00011098487</td>
+<td>197.61761</td>
+<td>2.3127012</td>
+</tr>
+<tr>
+<td>宝强</td>
+<td>1259</td>
+<td>0.00011045846</td>
+<td>144.6593</td>
+<td>2.1391745</td>
+</tr>
+<tr>
+<td>南烟</td>
+<td>1247</td>
+<td>0.000109405635</td>
+<td>1579.9502</td>
+<td>1.5795708</td>
+</tr>
+<tr>
+<td>呜呜呜呜</td>
+<td>1226</td>
+<td>0.0001075632</td>
+<td>1422.7194</td>
+<td>0.7233886</td>
+</tr>
+<tr>
+<td>壁咚</td>
+<td>1205</td>
+<td>0.00010572076</td>
+<td>2936.8447</td>
+<td>2.3357627</td>
+</tr>
+<tr>
+<td>懵逼</td>
+<td>1196</td>
+<td>0.00010493115</td>
+<td>1526.384</td>
+<td>1.7031717</td>
+</tr>
+<tr>
+<td>易烊千玺</td>
+<td>1193</td>
+<td>0.000104667946</td>
+<td>3649.4146</td>
+<td>1.7555826</td>
+</tr>
+<tr>
+<td>搞事情</td>
+<td>1177</td>
+<td>0.00010326418</td>
+<td>469.76385</td>
+<td>1.7669501</td>
+</tr>
+<tr>
+<td>萌萌</td>
+<td>1171</td>
+<td>0.00010273777</td>
+<td>369.76328</td>
+<td>1.4982914</td>
+</tr>
+<tr>
+<td>应怜</td>
+<td>1142</td>
+<td>0.00010019346</td>
+<td>679.91266</td>
+<td>1.6739386</td>
+</tr>
+<tr>
+<td>考神保佑</td>
+<td>1118</td>
+<td>0.00009808782</td>
+<td>716.0224</td>
+<td>0.6439655</td>
+</tr>
+<tr>
+<td>单身狗</td>
+<td>1084</td>
+<td>0.00009510482</td>
+<td>654.73596</td>
+<td>2.735538</td>
+</tr>
+<tr>
+<td>朝花惜时</td>
+<td>1080</td>
+<td>0.00009475388</td>
+<td>330.81293</td>
+<td>1.5743202</td>
+</tr>
+<tr>
+<td>签售</td>
+<td>1065</td>
+<td>0.000093437855</td>
+<td>3328.0237</td>
+<td>3.2389452</td>
+</tr>
+<tr>
+<td>高冉</td>
+<td>1059</td>
+<td>0.00009291145</td>
+<td>749.3344</td>
+<td>2.2584584</td>
+</tr>
+<tr>
+<td>洛逸</td>
+<td>1050</td>
+<td>0.00009212183</td>
+<td>6002.171</td>
+<td>3.3941467</td>
+</tr>
+<tr>
+<td>老司机</td>
+<td>1049</td>
+<td>0.0000920341</td>
+<td>523.69446</td>
+<td>2.1651042</td>
+</tr>
+<tr>
+<td>微信</td>
+<td>1035</td>
+<td>0.00009080581</td>
+<td>433.51373</td>
+<td>2.66124</td>
+</tr>
+<tr>
+<td>炫童</td>
+<td>1009</td>
+<td>0.00008852469</td>
+<td>2634.8816</td>
+<td>1.0329934</td>
+</tr>
+<tr>
+<td>高仿</td>
+<td>1006</td>
+<td>0.000088261484</td>
+<td>542.8019</td>
+<td>2.615807</td>
+</tr>
+<tr>
+<td>加油加油</td>
+<td>989</td>
+<td>0.00008676999</td>
+<td>160.90598</td>
+<td>0.99770564</td>
+</tr>
+<tr>
+<td>镜玄</td>
+<td>989</td>
+<td>0.00008676999</td>
+<td>3026.2065</td>
+<td>2.3082404</td>
+</tr>
+<tr>
+<td>小黄文</td>
+<td>982</td>
+<td>0.000086155844</td>
+<td>221.08255</td>
+<td>3.2080538</td>
+</tr>
+<tr>
+<td>咳咳</td>
+<td>974</td>
+<td>0.00008545396</td>
+<td>2539.0872</td>
+<td>0.7538306</td>
+</tr>
+<tr>
+<td>江哥</td>
+<td>974</td>
+<td>0.00008545396</td>
+<td>345.31592</td>
+<td>2.479942</td>
+</tr>
+<tr>
+<td>学生党</td>
+<td>953</td>
+<td>0.00008361153</td>
+<td>521.8426</td>
+<td>2.3849728</td>
+</tr>
+<tr>
+<td>同款</td>
+<td>947</td>
+<td>0.00008308511</td>
+<td>494.07947</td>
+<td>3.1331296</td>
+</tr>
+<tr>
+<td>嗷嗷嗷</td>
+<td>916</td>
+<td>0.00008036533</td>
+<td>3242.2725</td>
+<td>1.2108015</td>
+</tr>
+<tr>
+<td>晴蓝</td>
+<td>916</td>
+<td>0.00008036533</td>
+<td>977.92224</td>
+<td>1.5679594</td>
+</tr>
+<tr>
+<td>暖男</td>
+<td>910</td>
+<td>0.000079838916</td>
+<td>113.620476</td>
+<td>0.8645378</td>
+</tr>
+<tr>
+<td>哇哇哇</td>
+<td>909</td>
+<td>0.00007975118</td>
+<td>778.1059</td>
+<td>0.9925133</td>
+</tr>
+<tr>
+<td>腐女</td>
+<td>906</td>
+<td>0.00007948798</td>
+<td>274.76758</td>
+<td>2.7038126</td>
+</tr>
+<tr>
+<td>龙之谷</td>
+<td>902</td>
+<td>0.00007913704</td>
+<td>3523.1516</td>
+<td>0.8865134</td>
+</tr>
+<tr>
+<td>开车开车</td>
+<td>899</td>
+<td>0.00007887383</td>
+<td>498.61414</td>
+<td>0.67953616</td>
+</tr>
+<tr>
+<td>闺蜜</td>
+<td>899</td>
+<td>0.00007887383</td>
+<td>5841.041</td>
+<td>2.743314</td>
+</tr>
+<tr>
+<td>玛丽苏</td>
+<td>897</td>
+<td>0.000078698366</td>
+<td>3875.3462</td>
+<td>3.3459933</td>
+</tr>
+<tr>
+<td>南烟斋</td>
+<td>882</td>
+<td>0.000077382334</td>
+<td>2185.7441</td>
+<td>2.1416628</td>
+</tr>
+<tr>
+<td>清英</td>
+<td>872</td>
+<td>0.000076504984</td>
+<td>636.9233</td>
+<td>1.8763657</td>
+</tr>
+<tr>
+<td>老宫</td>
+<td>867</td>
+<td>0.00007606631</td>
+<td>365.83014</td>
+<td>2.6832836</td>
+</tr>
+<tr>
+<td>番外</td>
+<td>865</td>
+<td>0.00007589084</td>
+<td>1540.1489</td>
+<td>2.852577</td>
+</tr>
+<tr>
+<td>保佑保佑</td>
+<td>862</td>
+<td>0.000075627635</td>
+<td>119.56344</td>
+<td>0.84645087</td>
+</tr>
+<tr>
+<td>狂魔</td>
+<td>861</td>
+<td>0.0000755399</td>
+<td>1887.4408</td>
+<td>0.71571773</td>
+</tr>
+<tr>
+<td>没毛病</td>
+<td>859</td>
+<td>0.00007536443</td>
+<td>198.23634</td>
+<td>0.80526865</td>
+</tr>
+<tr>
+<td>嘿嘿嘿嘿</td>
+<td>854</td>
+<td>0.00007492575</td>
+<td>477.07257</td>
+<td>0.5259418</td>
+</tr>
+<tr>
+<td>小仙女</td>
+<td>845</td>
+<td>0.00007413614</td>
+<td>153.73885</td>
+<td>1.9263396</td>
+</tr>
+<tr>
+<td>鹿晗</td>
+<td>839</td>
+<td>0.00007360973</td>
+<td>5705.8306</td>
+<td>3.0926082</td>
+</tr>
+<tr>
+<td>停更</td>
+<td>821</td>
+<td>0.000072030496</td>
+<td>155.03694</td>
+<td>2.7178392</td>
+</tr>
+<tr>
+<td>必过</td>
+<td>818</td>
+<td>0.00007176729</td>
+<td>106.216034</td>
+<td>0.7666756</td>
+</tr>
+<tr>
+<td>秀恩爱</td>
+<td>809</td>
+<td>0.00007097767</td>
+<td>445.03564</td>
+<td>2.2470446</td>
+</tr>
+<tr>
+<td>注意身体</td>
+<td>802</td>
+<td>0.00007036353</td>
+<td>1461.2302</td>
+<td>1.6486573</td>
+</tr>
+<tr>
+<td>部漫画</td>
+<td>794</td>
+<td>0.00006966165</td>
+<td>175.1865</td>
+<td>1.2902995</td>
+</tr>
+<tr>
+<td>威风堂堂</td>
+<td>790</td>
+<td>0.00006931071</td>
+<td>5208.047</td>
+<td>1.9537654</td>
+</tr>
+<tr>
+<td>小贝</td>
+<td>790</td>
+<td>0.00006931071</td>
+<td>116.32485</td>
+<td>2.419325</td>
+</tr>
+<tr>
+<td>柯小</td>
+<td>785</td>
+<td>0.00006887203</td>
+<td>150.56447</td>
+<td>2.2457926</td>
+</tr>
+</tbody></table>
+
 可以看到排名靠前的是一些快看漫画特有的词汇：朝花、咬痕、锐思等；还有一些关于学生的：写作业、考神、学生党等；关于恋爱的：壁咚、单身狗、啪啪啪等；另外，这份数据是按照时间排序的，所以这前100万行数据应该是快看刚开发出社区功能时候的，所以也体现了当时的热点，例如宝强、马蓉、宋喆都出现在了词表里面。
+
+### 第三次测试
+根据上面统计出的结果,我们发现一些没什么意义的语气词(啦啦啦,嗯嗯等)和叠词短语(加油加油,保佑保佑)也出现在词表中,而且有的排名还很靠前.其实这些词都是没有什么固定搭配,但是出现的频率挺高的,可能都是被当做一些口头禅来使用了.但是筛选的时候默认是按照词频来排序的.  
+然而它们的左右邻字信息熵都比较低,所以我把这100条按照entropy这个字段来排序,发现排在前面的都是一些比较"好"的词.可以修改一下策略,提高entropy这个字段的阈值,或者直接根据它来排序后输出.
+下面分别是提高阈值和更改排序字段后的结果:  
+
+1.将entropy的最小值设为1.0
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">text</th>
+<th title="Field #2">frequency</th>
+<th title="Field #3">probability</th>
+<th title="Field #4">aggregation</th>
+<th title="Field #5">entropy</th>
+</tr></thead>
+<tbody><tr>
+<td>朝花</td>
+<td align="right">7619</td>
+<td align="right">0.0006684748</td>
+<td align="right">714.1395</td>
+<td align="right">2.1286788</td>
+</tr>
+<tr>
+<td>咬痕</td>
+<td align="right">7033</td>
+<td align="right">0.00061706046</td>
+<td align="right">1358.7638</td>
+<td align="right">2.6024222</td>
+</tr>
+<tr>
+<td>锐思</td>
+<td align="right">5265</td>
+<td align="right">0.0004619399</td>
+<td align="right">845.5993</td>
+<td align="right">2.9776123</td>
+</tr>
+<tr>
+<td>伊凯</td>
+<td align="right">4940</td>
+<td align="right">0.00043342507</td>
+<td align="right">1481.129</td>
+<td align="right">2.8826144</td>
+</tr>
+<tr>
+<td>马蓉</td>
+<td align="right">3983</td>
+<td align="right">0.00034945994</td>
+<td align="right">1295.1906</td>
+<td align="right">2.83174</td>
+</tr>
+<tr>
+<td>污污</td>
+<td align="right">2501</td>
+<td align="right">0.0002194324</td>
+<td align="right">353.56616</td>
+<td align="right">1.0437318</td>
+</tr>
+<tr>
+<td>千玺</td>
+<td align="right">2446</td>
+<td align="right">0.00021460683</td>
+<td align="right">1941.3662</td>
+<td align="right">2.262512</td>
+</tr>
+<tr>
+<td>芙蕾</td>
+<td align="right">2307</td>
+<td align="right">0.00020241126</td>
+<td align="right">3910.0344</td>
+<td align="right">2.5435712</td>
+</tr>
+<tr>
+<td>狗粮</td>
+<td align="right">2190</td>
+<td align="right">0.00019214593</td>
+<td align="right">823.8064</td>
+<td align="right">2.7401226</td>
+</tr>
+<tr>
+<td>夏天岛</td>
+<td align="right">2133</td>
+<td align="right">0.00018714488</td>
+<td align="right">2851.0042</td>
+<td align="right">3.0487359</td>
+</tr>
+<tr>
+<td>呜呜呜</td>
+<td align="right">2041</td>
+<td align="right">0.00017907299</td>
+<td align="right">1577.9368</td>
+<td align="right">1.0952901</td>
+</tr>
+<tr>
+<td>爆照</td>
+<td align="right">1641</td>
+<td align="right">0.00014397784</td>
+<td align="right">613.2958</td>
+<td align="right">1.4314348</td>
+</tr>
+<tr>
+<td>福利图</td>
+<td align="right">1625</td>
+<td align="right">0.00014257403</td>
+<td align="right">521.51044</td>
+<td align="right">2.5649443</td>
+</tr>
+<tr>
+<td>啪啪啪</td>
+<td align="right">1592</td>
+<td align="right">0.00013967868</td>
+<td align="right">1376.987</td>
+<td align="right">2.1149125</td>
+</tr>
+<tr>
+<td>莲莲</td>
+<td align="right">1444</td>
+<td align="right">0.00012669349</td>
+<td align="right">1271.3285</td>
+<td align="right">2.7751904</td>
+</tr>
+<tr>
+<td>傲娇</td>
+<td align="right">1383</td>
+<td align="right">0.00012134147</td>
+<td align="right">4379.4097</td>
+<td align="right">1.7764797</td>
+</tr>
+<tr>
+<td>林路</td>
+<td align="right">1371</td>
+<td align="right">0.00012028862</td>
+<td align="right">408.81885</td>
+<td align="right">2.5821934</td>
+</tr>
+<tr>
+<td>耽美</td>
+<td align="right">1365</td>
+<td align="right">0.00011976219</td>
+<td align="right">719.60846</td>
+<td align="right">3.4154472</td>
+</tr>
+<tr>
+<td>蓝斯</td>
+<td align="right">1328</td>
+<td align="right">0.00011651589</td>
+<td align="right">470.82437</td>
+<td align="right">3.024543</td>
+</tr>
+<tr>
+<td>宋喆</td>
+<td align="right">1296</td>
+<td align="right">0.00011370828</td>
+<td align="right">5152.0664</td>
+<td align="right">2.5304878</td>
+</tr>
+<tr>
+<td>谨斯里</td>
+<td align="right">1292</td>
+<td align="right">0.000113357324</td>
+<td align="right">446.49588</td>
+<td align="right">2.8306234</td>
+</tr>
+<tr>
+<td>水默</td>
+<td align="right">1285</td>
+<td align="right">0.00011274316</td>
+<td align="right">321.61813</td>
+<td align="right">2.3186948</td>
+</tr>
+<tr>
+<td>微博</td>
+<td align="right">1272</td>
+<td align="right">0.00011160257</td>
+<td align="right">2229.087</td>
+<td align="right">3.469414</td>
+</tr>
+<tr>
+<td>南烟</td>
+<td align="right">1247</td>
+<td align="right">0.00010940912</td>
+<td align="right">1579.9</td>
+<td align="right">1.5795708</td>
+</tr>
+<tr>
+<td>壁咚</td>
+<td align="right">1205</td>
+<td align="right">0.00010572413</td>
+<td align="right">2936.751</td>
+<td align="right">2.3357627</td>
+</tr>
+<tr>
+<td>懵逼</td>
+<td align="right">1196</td>
+<td align="right">0.000104934494</td>
+<td align="right">1526.3354</td>
+<td align="right">1.7031717</td>
+</tr>
+<tr>
+<td>易烊千玺</td>
+<td align="right">1193</td>
+<td align="right">0.00010467128</td>
+<td align="right">3649.2983</td>
+<td align="right">1.7502799</td>
+</tr>
+<tr>
+<td>搞事情</td>
+<td align="right">1177</td>
+<td align="right">0.00010326747</td>
+<td align="right">469.7489</td>
+<td align="right">1.7669501</td>
+</tr>
+<tr>
+<td>萌萌</td>
+<td align="right">1171</td>
+<td align="right">0.00010274105</td>
+<td align="right">369.75153</td>
+<td align="right">1.4982914</td>
+</tr>
+<tr>
+<td>应怜</td>
+<td align="right">1142</td>
+<td align="right">0.000100196645</td>
+<td align="right">679.891</td>
+<td align="right">1.6739386</td>
+</tr>
+<tr>
+<td>单身狗</td>
+<td align="right">1084</td>
+<td align="right">0.00009510785</td>
+<td align="right">654.71515</td>
+<td align="right">2.735538</td>
+</tr>
+<tr>
+<td>朝花惜时</td>
+<td align="right">1080</td>
+<td align="right">0.0000947569</td>
+<td align="right">330.80243</td>
+<td align="right">1.5743202</td>
+</tr>
+<tr>
+<td>签售</td>
+<td align="right">1065</td>
+<td align="right">0.00009344083</td>
+<td align="right">3327.9177</td>
+<td align="right">3.2389452</td>
+</tr>
+<tr>
+<td>高冉</td>
+<td align="right">1059</td>
+<td align="right">0.0000929144</td>
+<td align="right">749.31055</td>
+<td align="right">2.2584584</td>
+</tr>
+<tr>
+<td>洛逸</td>
+<td align="right">1050</td>
+<td align="right">0.00009212476</td>
+<td align="right">6001.979</td>
+<td align="right">3.3941467</td>
+</tr>
+<tr>
+<td>老司机</td>
+<td align="right">1049</td>
+<td align="right">0.00009203702</td>
+<td align="right">523.67773</td>
+<td align="right">2.1651042</td>
+</tr>
+<tr>
+<td>微信</td>
+<td align="right">1035</td>
+<td align="right">0.000090808695</td>
+<td align="right">433.49994</td>
+<td align="right">2.66124</td>
+</tr>
+<tr>
+<td>炫童</td>
+<td align="right">1009</td>
+<td align="right">0.00008852751</td>
+<td align="right">2634.7979</td>
+<td align="right">1.0329934</td>
+</tr>
+<tr>
+<td>高仿</td>
+<td align="right">1006</td>
+<td align="right">0.0000882643</td>
+<td align="right">542.7846</td>
+<td align="right">2.615807</td>
+</tr>
+<tr>
+<td>镜玄</td>
+<td align="right">989</td>
+<td align="right">0.00008677275</td>
+<td align="right">3026.1096</td>
+<td align="right">2.3082404</td>
+</tr>
+<tr>
+<td>江哥</td>
+<td align="right">974</td>
+<td align="right">0.00008545668</td>
+<td align="right">345.30493</td>
+<td align="right">2.479942</td>
+</tr>
+<tr>
+<td>学生党</td>
+<td align="right">953</td>
+<td align="right">0.00008361419</td>
+<td align="right">521.8259</td>
+<td align="right">2.3849728</td>
+</tr>
+<tr>
+<td>同款</td>
+<td align="right">947</td>
+<td align="right">0.00008308776</td>
+<td align="right">494.06375</td>
+<td align="right">3.1331296</td>
+</tr>
+<tr>
+<td>嗷嗷嗷</td>
+<td align="right">916</td>
+<td align="right">0.000080367885</td>
+<td align="right">3242.169</td>
+<td align="right">1.2108015</td>
+</tr>
+<tr>
+<td>晴蓝</td>
+<td align="right">916</td>
+<td align="right">0.000080367885</td>
+<td align="right">977.891</td>
+<td align="right">1.5679594</td>
+</tr>
+<tr>
+<td>闺蜜</td>
+<td align="right">899</td>
+<td align="right">0.00007887634</td>
+<td align="right">5840.8545</td>
+<td align="right">2.743314</td>
+</tr>
+<tr>
+<td>玛丽苏</td>
+<td align="right">897</td>
+<td align="right">0.00007870087</td>
+<td align="right">3875.2224</td>
+<td align="right">3.3459933</td>
+</tr>
+<tr>
+<td>南烟斋</td>
+<td align="right">882</td>
+<td align="right">0.0000773848</td>
+<td align="right">2185.6746</td>
+<td align="right">2.1416628</td>
+</tr>
+<tr>
+<td>清英</td>
+<td align="right">872</td>
+<td align="right">0.00007650742</td>
+<td align="right">636.903</td>
+<td align="right">1.8763657</td>
+</tr>
+<tr>
+<td>老宫</td>
+<td align="right">867</td>
+<td align="right">0.00007606873</td>
+<td align="right">365.8185</td>
+<td align="right">2.6832836</td>
+</tr>
+<tr>
+<td>番外</td>
+<td align="right">865</td>
+<td align="right">0.00007589326</td>
+<td align="right">1540.1</td>
+<td align="right">2.852577</td>
+</tr>
+<tr>
+<td>鹿晗</td>
+<td align="right">839</td>
+<td align="right">0.00007361207</td>
+<td align="right">5705.6484</td>
+<td align="right">3.0926082</td>
+</tr>
+<tr>
+<td>秀恩爱</td>
+<td align="right">809</td>
+<td align="right">0.000070979935</td>
+<td align="right">445.0215</td>
+<td align="right">2.2470446</td>
+</tr>
+<tr>
+<td>注意身体</td>
+<td align="right">802</td>
+<td align="right">0.00007036577</td>
+<td align="right">1461.1837</td>
+<td align="right">1.6486573</td>
+</tr>
+<tr>
+<td>威风堂堂</td>
+<td align="right">790</td>
+<td align="right">0.00006931292</td>
+<td align="right">5207.882</td>
+<td align="right">1.9537654</td>
+</tr>
+<tr>
+<td>傻逼</td>
+<td align="right">779</td>
+<td align="right">0.0000683478</td>
+<td align="right">503.8682</td>
+<td align="right">2.92917</td>
+</tr>
+<tr>
+<td>炒鸡</td>
+<td align="right">775</td>
+<td align="right">0.00006799685</td>
+<td align="right">1740.99</td>
+<td align="right">2.6187243</td>
+</tr>
+<tr>
+<td>江应怜</td>
+<td align="right">774</td>
+<td align="right">0.00006790911</td>
+<td align="right">2937.19</td>
+<td align="right">3.1312523</td>
+</tr>
+<tr>
+<td>表情包</td>
+<td align="right">760</td>
+<td align="right">0.00006668078</td>
+<td align="right">834.18677</td>
+<td align="right">2.6742978</td>
+</tr>
+<tr>
+<td>董乐</td>
+<td align="right">751</td>
+<td align="right">0.00006589114</td>
+<td align="right">1694.9777</td>
+<td align="right">1.834631</td>
+</tr>
+<tr>
+<td>淇儿</td>
+<td align="right">741</td>
+<td align="right">0.00006501376</td>
+<td align="right">1107.47</td>
+<td align="right">2.7357907</td>
+</tr>
+<tr>
+<td>网红</td>
+<td align="right">725</td>
+<td align="right">0.00006360996</td>
+<td align="right">383.83417</td>
+<td align="right">2.673612</td>
+</tr>
+<tr>
+<td>艾辰</td>
+<td align="right">724</td>
+<td align="right">0.00006352222</td>
+<td align="right">4679.0825</td>
+<td align="right">2.3421447</td>
+</tr>
+<tr>
+<td>阿良</td>
+<td align="right">712</td>
+<td align="right">0.000062469364</td>
+<td align="right">582.4503</td>
+<td align="right">2.335938</td>
+</tr>
+<tr>
+<td>王宝强</td>
+<td align="right">709</td>
+<td align="right">0.00006220615</td>
+<td align="right">1305.3687</td>
+<td align="right">3.3467567</td>
+</tr>
+<tr>
+<td>麻麻</td>
+<td align="right">674</td>
+<td align="right">0.000059135324</td>
+<td align="right">1263.2423</td>
+<td align="right">3.1371875</td>
+</tr>
+<tr>
+<td>杨洋</td>
+<td align="right">664</td>
+<td align="right">0.000058257945</td>
+<td align="right">3129.148</td>
+<td align="right">2.676895</td>
+</tr>
+<tr>
+<td>叶陵</td>
+<td align="right">661</td>
+<td align="right">0.00005799473</td>
+<td align="right">5301.6133</td>
+<td align="right">2.2701695</td>
+</tr>
+<tr>
+<td>蓝翅</td>
+<td align="right">636</td>
+<td align="right">0.000055801283</td>
+<td align="right">1351.7319</td>
+<td align="right">2.4104183</td>
+</tr>
+<tr>
+<td>颜值</td>
+<td align="right">625</td>
+<td align="right">0.000054836168</td>
+<td align="right">2091.0918</td>
+<td align="right">3.5542188</td>
+</tr>
+<tr>
+<td>摩羯</td>
+<td align="right">615</td>
+<td align="right">0.00005395879</td>
+<td align="right">10546.176</td>
+<td align="right">2.0407236</td>
+</tr>
+<tr>
+<td>喵喵</td>
+<td align="right">597</td>
+<td align="right">0.00005237951</td>
+<td align="right">1321.6555</td>
+<td align="right">1.3843987</td>
+</tr>
+<tr>
+<td>男票</td>
+<td align="right">596</td>
+<td align="right">0.00005229177</td>
+<td align="right">321.81198</td>
+<td align="right">2.861099</td>
+</tr>
+<tr>
+<td>孩纸</td>
+<td align="right">583</td>
+<td align="right">0.00005115118</td>
+<td align="right">307.64026</td>
+<td align="right">2.1485841</td>
+</tr>
+<tr>
+<td>萌萌哒</td>
+<td align="right">551</td>
+<td align="right">0.000048343565</td>
+<td align="right">1209.7896</td>
+<td align="right">1.3233126</td>
+</tr>
+<tr>
+<td>杨深</td>
+<td align="right">546</td>
+<td align="right">0.000047904876</td>
+<td align="right">864.4192</td>
+<td align="right">3.1076918</td>
+</tr>
+<tr>
+<td>良叔</td>
+<td align="right">546</td>
+<td align="right">0.000047904876</td>
+<td align="right">893.4971</td>
+<td align="right">1.5604147</td>
+</tr>
+<tr>
+<td>兔先生</td>
+<td align="right">526</td>
+<td align="right">0.00004615012</td>
+<td align="right">474.43732</td>
+<td align="right">2.2437394</td>
+</tr>
+<tr>
+<td>挂科</td>
+<td align="right">526</td>
+<td align="right">0.00004615012</td>
+<td align="right">715.76135</td>
+<td align="right">1.274379</td>
+</tr>
+<tr>
+<td>脑残</td>
+<td align="right">521</td>
+<td align="right">0.00004571143</td>
+<td align="right">1101.3003</td>
+<td align="right">2.3731766</td>
+</tr>
+<tr>
+<td>脑洞</td>
+<td align="right">520</td>
+<td align="right">0.000045623692</td>
+<td align="right">1432.9651</td>
+<td align="right">2.697944</td>
+</tr>
+<tr>
+<td>宣哲</td>
+<td align="right">514</td>
+<td align="right">0.000045097266</td>
+<td align="right">6498.177</td>
+<td align="right">2.250713</td>
+</tr>
+<tr>
+<td>酱酱</td>
+<td align="right">512</td>
+<td align="right">0.000044921788</td>
+<td align="right">1528.3884</td>
+<td align="right">1.6038784</td>
+</tr>
+<tr>
+<td>阿修</td>
+<td align="right">503</td>
+<td align="right">0.00004413215</td>
+<td align="right">616.2741</td>
+<td align="right">2.4794445</td>
+</tr>
+<tr>
+<td>咕啾</td>
+<td align="right">486</td>
+<td align="right">0.000042640604</td>
+<td align="right">11397.398</td>
+<td align="right">3.1129205</td>
+</tr>
+<tr>
+<td>冯思婷</td>
+<td align="right">479</td>
+<td align="right">0.00004202644</td>
+<td align="right">18829.566</td>
+<td align="right">3.095593</td>
+</tr>
+<tr>
+<td>惊悚</td>
+<td align="right">478</td>
+<td align="right">0.000041938703</td>
+<td align="right">4864.7705</td>
+<td align="right">1.5313193</td>
+</tr>
+<tr>
+<td>条动态</td>
+<td align="right">456</td>
+<td align="right">0.00004000847</td>
+<td align="right">399.85513</td>
+<td align="right">1.8436525</td>
+</tr>
+<tr>
+<td>姨妈巾</td>
+<td align="right">454</td>
+<td align="right">0.000039832994</td>
+<td align="right">2905.3113</td>
+<td align="right">2.8004825</td>
+</tr>
+<tr>
+<td>廖兮</td>
+<td align="right">454</td>
+<td align="right">0.000039832994</td>
+<td align="right">8386.256</td>
+<td align="right">2.3456502</td>
+</tr>
+<tr>
+<td>嘤嘤嘤</td>
+<td align="right">449</td>
+<td align="right">0.000039394305</td>
+<td align="right">4181.5786</td>
+<td align="right">1.2522628</td>
+</tr>
+<tr>
+<td>二硕</td>
+<td align="right">433</td>
+<td align="right">0.000037990496</td>
+<td align="right">588.5848</td>
+<td align="right">1.8477677</td>
+</tr>
+<tr>
+<td>剧透</td>
+<td align="right">417</td>
+<td align="right">0.00003658669</td>
+<td align="right">994.41235</td>
+<td align="right">2.6705313</td>
+</tr>
+<tr>
+<td>琪儿</td>
+<td align="right">415</td>
+<td align="right">0.000036411217</td>
+<td align="right">911.04236</td>
+<td align="right">2.4461467</td>
+</tr>
+<tr>
+<td>举爪</td>
+<td align="right">387</td>
+<td align="right">0.000033954555</td>
+<td align="right">815.0801</td>
+<td align="right">1.0833675</td>
+</tr>
+<tr>
+<td>属于中国</td>
+<td align="right">381</td>
+<td align="right">0.00003342813</td>
+<td align="right">1119.742</td>
+<td align="right">1.298511</td>
+</tr>
+<tr>
+<td>夏蒂</td>
+<td align="right">380</td>
+<td align="right">0.00003334039</td>
+<td align="right">2393.8135</td>
+<td align="right">2.7324243</td>
+</tr>
+<tr>
+<td>茨木</td>
+<td align="right">375</td>
+<td align="right">0.000032901702</td>
+<td align="right">5006.0386</td>
+<td align="right">2.7616844</td>
+</tr>
+<tr>
+<td>王俊凯</td>
+<td align="right">373</td>
+<td align="right">0.000032726224</td>
+<td align="right">1712.8926</td>
+<td align="right">2.2571971</td>
+</tr>
+<tr>
+<td>寄刀片</td>
+<td align="right">362</td>
+<td align="right">0.00003176111</td>
+<td align="right">1749.3829</td>
+<td align="right">1.9641904</td>
+</tr>
+</tbody></table>
+
+2.按entropy从大到小排序取前100个(probability>=0.00001)
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">text</th>
+<th title="Field #2">frequency</th>
+<th title="Field #3">probability</th>
+<th title="Field #4">aggregation</th>
+<th title="Field #5">entropy</th>
+</tr></thead>
+<tbody><tr>
+<td>颜值</td>
+<td align="right">625</td>
+<td align="right">0.000054836168</td>
+<td align="right">2091.0918</td>
+<td align="right">3.5542188</td>
+</tr>
+<tr>
+<td>微博</td>
+<td align="right">1272</td>
+<td align="right">0.00011160257</td>
+<td align="right">2229.087</td>
+<td align="right">3.469414</td>
+</tr>
+<tr>
+<td>吐槽</td>
+<td align="right">335</td>
+<td align="right">0.000029392186</td>
+<td align="right">1796.5593</td>
+<td align="right">3.4630563</td>
+</tr>
+<tr>
+<td>耽美</td>
+<td align="right">1365</td>
+<td align="right">0.00011976219</td>
+<td align="right">719.60846</td>
+<td align="right">3.4154472</td>
+</tr>
+<tr>
+<td>洛逸</td>
+<td align="right">1050</td>
+<td align="right">0.00009212476</td>
+<td align="right">6001.979</td>
+<td align="right">3.3941467</td>
+</tr>
+<tr>
+<td>王宝强</td>
+<td align="right">709</td>
+<td align="right">0.00006220615</td>
+<td align="right">1305.3687</td>
+<td align="right">3.3467567</td>
+</tr>
+<tr>
+<td>玛丽苏</td>
+<td align="right">897</td>
+<td align="right">0.00007870087</td>
+<td align="right">3875.2224</td>
+<td align="right">3.3459933</td>
+</tr>
+<tr>
+<td>戈薇</td>
+<td align="right">250</td>
+<td align="right">0.000021934467</td>
+<td align="right">16642.215</td>
+<td align="right">3.2495627</td>
+</tr>
+<tr>
+<td>茶蛋</td>
+<td align="right">152</td>
+<td align="right">0.000013336156</td>
+<td align="right">641.07733</td>
+<td align="right">3.2491825</td>
+</tr>
+<tr>
+<td>签售</td>
+<td align="right">1065</td>
+<td align="right">0.00009344083</td>
+<td align="right">3327.9177</td>
+<td align="right">3.2389452</td>
+</tr>
+<tr>
+<td>脑补</td>
+<td align="right">244</td>
+<td align="right">0.000021408041</td>
+<td align="right">344.0221</td>
+<td align="right">3.2287629</td>
+</tr>
+<tr>
+<td>麻麻</td>
+<td align="right">674</td>
+<td align="right">0.000059135324</td>
+<td align="right">1263.2423</td>
+<td align="right">3.1371875</td>
+</tr>
+<tr>
+<td>同款</td>
+<td align="right">947</td>
+<td align="right">0.00008308776</td>
+<td align="right">494.06375</td>
+<td align="right">3.1331296</td>
+</tr>
+<tr>
+<td>江应怜</td>
+<td align="right">774</td>
+<td align="right">0.00006790911</td>
+<td align="right">2937.19</td>
+<td align="right">3.1312523</td>
+</tr>
+<tr>
+<td>杨深</td>
+<td align="right">546</td>
+<td align="right">0.000047904876</td>
+<td align="right">864.4192</td>
+<td align="right">3.1076918</td>
+</tr>
+<tr>
+<td>咕啾</td>
+<td align="right">486</td>
+<td align="right">0.000042640604</td>
+<td align="right">11397.398</td>
+<td align="right">3.1006157</td>
+</tr>
+<tr>
+<td>冯思婷</td>
+<td align="right">479</td>
+<td align="right">0.00004202644</td>
+<td align="right">18829.566</td>
+<td align="right">3.095593</td>
+</tr>
+<tr>
+<td>鹿晗</td>
+<td align="right">839</td>
+<td align="right">0.00007361207</td>
+<td align="right">5705.6484</td>
+<td align="right">3.0926082</td>
+</tr>
+<tr>
+<td>夏天岛</td>
+<td align="right">2133</td>
+<td align="right">0.00018714488</td>
+<td align="right">2851.0042</td>
+<td align="right">3.0487359</td>
+</tr>
+<tr>
+<td>蓝斯</td>
+<td align="right">1328</td>
+<td align="right">0.00011651589</td>
+<td align="right">470.82437</td>
+<td align="right">3.024543</td>
+</tr>
+<tr>
+<td>闹闹</td>
+<td align="right">213</td>
+<td align="right">0.000018688166</td>
+<td align="right">1013.09607</td>
+<td align="right">2.9969301</td>
+</tr>
+<tr>
+<td>锐思</td>
+<td align="right">5265</td>
+<td align="right">0.0004619399</td>
+<td align="right">845.5993</td>
+<td align="right">2.9776123</td>
+</tr>
+<tr>
+<td>语文老师</td>
+<td align="right">214</td>
+<td align="right">0.000018775903</td>
+<td align="right">385.0536</td>
+<td align="right">2.9565506</td>
+</tr>
+<tr>
+<td>关晓彤</td>
+<td align="right">204</td>
+<td align="right">0.000017898525</td>
+<td align="right">1144.9987</td>
+<td align="right">2.938278</td>
+</tr>
+<tr>
+<td>傻逼</td>
+<td align="right">779</td>
+<td align="right">0.0000683478</td>
+<td align="right">503.8682</td>
+<td align="right">2.92917</td>
+</tr>
+<tr>
+<td>霸道总裁</td>
+<td align="right">343</td>
+<td align="right">0.00003009409</td>
+<td align="right">5585.153</td>
+<td align="right">2.9150019</td>
+</tr>
+<tr>
+<td>哑舍</td>
+<td align="right">253</td>
+<td align="right">0.00002219768</td>
+<td align="right">8214.513</td>
+<td align="right">2.9121056</td>
+</tr>
+<tr>
+<td>艾爹</td>
+<td align="right">132</td>
+<td align="right">0.000011581399</td>
+<td align="right">1129.477</td>
+<td align="right">2.90676</td>
+</tr>
+<tr>
+<td>伊凯</td>
+<td align="right">4940</td>
+<td align="right">0.00043342507</td>
+<td align="right">1481.129</td>
+<td align="right">2.8826144</td>
+</tr>
+<tr>
+<td>撕逼</td>
+<td align="right">322</td>
+<td align="right">0.000028251594</td>
+<td align="right">582.5167</td>
+<td align="right">2.8622305</td>
+</tr>
+<tr>
+<td>男票</td>
+<td align="right">596</td>
+<td align="right">0.00005229177</td>
+<td align="right">321.81198</td>
+<td align="right">2.861099</td>
+</tr>
+<tr>
+<td>番外</td>
+<td align="right">865</td>
+<td align="right">0.00007589326</td>
+<td align="right">1540.1</td>
+<td align="right">2.852577</td>
+</tr>
+<tr>
+<td>抱枕</td>
+<td align="right">195</td>
+<td align="right">0.000017108885</td>
+<td align="right">1144.7516</td>
+<td align="right">2.849493</td>
+</tr>
+<tr>
+<td>马蓉</td>
+<td align="right">3983</td>
+<td align="right">0.00034945994</td>
+<td align="right">1295.1906</td>
+<td align="right">2.83174</td>
+</tr>
+<tr>
+<td>谨斯里</td>
+<td align="right">1292</td>
+<td align="right">0.000113357324</td>
+<td align="right">446.49588</td>
+<td align="right">2.8248599</td>
+</tr>
+<tr>
+<td>姨妈巾</td>
+<td align="right">454</td>
+<td align="right">0.000039832994</td>
+<td align="right">2905.3113</td>
+<td align="right">2.8004825</td>
+</tr>
+<tr>
+<td>川彤</td>
+<td align="right">267</td>
+<td align="right">0.000023426011</td>
+<td align="right">3209.335</td>
+<td align="right">2.789411</td>
+</tr>
+<tr>
+<td>兔兔</td>
+<td align="right">181</td>
+<td align="right">0.000015880554</td>
+<td align="right">497.66367</td>
+<td align="right">2.7813048</td>
+</tr>
+<tr>
+<td>思宇</td>
+<td align="right">273</td>
+<td align="right">0.000023952438</td>
+<td align="right">409.82895</td>
+<td align="right">2.7800584</td>
+</tr>
+<tr>
+<td>撩妹</td>
+<td align="right">146</td>
+<td align="right">0.000012809729</td>
+<td align="right">569.5236</td>
+<td align="right">2.7790928</td>
+</tr>
+<tr>
+<td>莲莲</td>
+<td align="right">1444</td>
+<td align="right">0.00012669349</td>
+<td align="right">1271.3285</td>
+<td align="right">2.7751904</td>
+</tr>
+<tr>
+<td>姚非拉</td>
+<td align="right">181</td>
+<td align="right">0.000015880554</td>
+<td align="right">2082.7703</td>
+<td align="right">2.7711809</td>
+</tr>
+<tr>
+<td>逗比</td>
+<td align="right">275</td>
+<td align="right">0.000024127914</td>
+<td align="right">321.02866</td>
+<td align="right">2.763499</td>
+</tr>
+<tr>
+<td>茨木</td>
+<td align="right">375</td>
+<td align="right">0.000032901702</td>
+<td align="right">5006.0386</td>
+<td align="right">2.7616844</td>
+</tr>
+<tr>
+<td>闺蜜</td>
+<td align="right">899</td>
+<td align="right">0.00007887634</td>
+<td align="right">5840.8545</td>
+<td align="right">2.743314</td>
+</tr>
+<tr>
+<td>真爱粉</td>
+<td align="right">165</td>
+<td align="right">0.000014476748</td>
+<td align="right">422.13095</td>
+<td align="right">2.7400355</td>
+</tr>
+<tr>
+<td>狗粮</td>
+<td align="right">2190</td>
+<td align="right">0.00019214593</td>
+<td align="right">823.8064</td>
+<td align="right">2.7364693</td>
+</tr>
+<tr>
+<td>淇儿</td>
+<td align="right">741</td>
+<td align="right">0.00006501376</td>
+<td align="right">1107.47</td>
+<td align="right">2.7357907</td>
+</tr>
+<tr>
+<td>单身狗</td>
+<td align="right">1084</td>
+<td align="right">0.00009510785</td>
+<td align="right">654.71515</td>
+<td align="right">2.735538</td>
+</tr>
+<tr>
+<td>夏蒂</td>
+<td align="right">380</td>
+<td align="right">0.00003334039</td>
+<td align="right">2393.8135</td>
+<td align="right">2.7324243</td>
+</tr>
+<tr>
+<td>金丘</td>
+<td align="right">270</td>
+<td align="right">0.000023689225</td>
+<td align="right">3116.9807</td>
+<td align="right">2.7218895</td>
+</tr>
+<tr>
+<td>脑残粉</td>
+<td align="right">189</td>
+<td align="right">0.000016582457</td>
+<td align="right">737.5371</td>
+<td align="right">2.7108097</td>
+</tr>
+<tr>
+<td>哆哆</td>
+<td align="right">319</td>
+<td align="right">0.00002798838</td>
+<td align="right">7592.615</td>
+<td align="right">2.7099466</td>
+</tr>
+<tr>
+<td>张若昀</td>
+<td align="right">216</td>
+<td align="right">0.00001895138</td>
+<td align="right">595.09076</td>
+<td align="right">2.7083547</td>
+</tr>
+<tr>
+<td>板绘</td>
+<td align="right">146</td>
+<td align="right">0.000012809729</td>
+<td align="right">830.856</td>
+<td align="right">2.700903</td>
+</tr>
+<tr>
+<td>脑洞</td>
+<td align="right">520</td>
+<td align="right">0.000045623692</td>
+<td align="right">1432.9651</td>
+<td align="right">2.697944</td>
+</tr>
+<tr>
+<td>老宫</td>
+<td align="right">867</td>
+<td align="right">0.00007606873</td>
+<td align="right">365.8185</td>
+<td align="right">2.6832836</td>
+</tr>
+<tr>
+<td>王者荣耀</td>
+<td align="right">223</td>
+<td align="right">0.000019565545</td>
+<td align="right">2297.3916</td>
+<td align="right">2.6817567</td>
+</tr>
+<tr>
+<td>杨洋</td>
+<td align="right">664</td>
+<td align="right">0.000058257945</td>
+<td align="right">3129.148</td>
+<td align="right">2.676895</td>
+</tr>
+<tr>
+<td>表情包</td>
+<td align="right">760</td>
+<td align="right">0.00006668078</td>
+<td align="right">834.18677</td>
+<td align="right">2.6742978</td>
+</tr>
+<tr>
+<td>网红</td>
+<td align="right">725</td>
+<td align="right">0.00006360996</td>
+<td align="right">383.83417</td>
+<td align="right">2.673612</td>
+</tr>
+<tr>
+<td>剧透</td>
+<td align="right">417</td>
+<td align="right">0.00003658669</td>
+<td align="right">994.41235</td>
+<td align="right">2.6705313</td>
+</tr>
+<tr>
+<td>拖稿</td>
+<td align="right">258</td>
+<td align="right">0.00002263637</td>
+<td align="right">560.069</td>
+<td align="right">2.668303</td>
+</tr>
+<tr>
+<td>杜小莘</td>
+<td align="right">119</td>
+<td align="right">0.000010440806</td>
+<td align="right">1354.8605</td>
+<td align="right">2.6673255</td>
+</tr>
+<tr>
+<td>微信</td>
+<td align="right">1035</td>
+<td align="right">0.000090808695</td>
+<td align="right">433.49994</td>
+<td align="right">2.66124</td>
+</tr>
+<tr>
+<td>马荣</td>
+<td align="right">307</td>
+<td align="right">0.000026935526</td>
+<td align="right">556.4856</td>
+<td align="right">2.6507087</td>
+</tr>
+<tr>
+<td>腹黑</td>
+<td align="right">344</td>
+<td align="right">0.000030181827</td>
+<td align="right">1199.4729</td>
+<td align="right">2.623004</td>
+</tr>
+<tr>
+<td>炒鸡</td>
+<td align="right">775</td>
+<td align="right">0.00006799685</td>
+<td align="right">1740.99</td>
+<td align="right">2.6187243</td>
+</tr>
+<tr>
+<td>高仿</td>
+<td align="right">1006</td>
+<td align="right">0.0000882643</td>
+<td align="right">542.7846</td>
+<td align="right">2.615807</td>
+</tr>
+<tr>
+<td>薛之谦</td>
+<td align="right">290</td>
+<td align="right">0.000025443982</td>
+<td align="right">13751.113</td>
+<td align="right">2.6034563</td>
+</tr>
+<tr>
+<td>咬痕</td>
+<td align="right">7033</td>
+<td align="right">0.00061706046</td>
+<td align="right">1358.7638</td>
+<td align="right">2.6024222</td>
+</tr>
+<tr>
+<td>雾霾</td>
+<td align="right">128</td>
+<td align="right">0.000011230447</td>
+<td align="right">8250.666</td>
+<td align="right">2.5962553</td>
+</tr>
+<tr>
+<td>林路</td>
+<td align="right">1371</td>
+<td align="right">0.00012028862</td>
+<td align="right">408.81885</td>
+<td align="right">2.5821934</td>
+</tr>
+<tr>
+<td>凯爸锐妈</td>
+<td align="right">132</td>
+<td align="right">0.000011581399</td>
+<td align="right">581.91534</td>
+<td align="right">2.5741382</td>
+</tr>
+<tr>
+<td>福利图</td>
+<td align="right">1625</td>
+<td align="right">0.00014257403</td>
+<td align="right">521.51044</td>
+<td align="right">2.5649443</td>
+</tr>
+<tr>
+<td>瑾斯里</td>
+<td align="right">128</td>
+<td align="right">0.000011230447</td>
+<td align="right">390.25647</td>
+<td align="right">2.5566056</td>
+</tr>
+<tr>
+<td>宋仲基</td>
+<td align="right">174</td>
+<td align="right">0.000015266389</td>
+<td align="right">3581.4153</td>
+<td align="right">2.5511425</td>
+</tr>
+<tr>
+<td>芙蕾</td>
+<td align="right">2307</td>
+<td align="right">0.00020241126</td>
+<td align="right">3910.0344</td>
+<td align="right">2.5435712</td>
+</tr>
+<tr>
+<td>伯贤</td>
+<td align="right">114</td>
+<td align="right">0.000010002117</td>
+<td align="right">9617.505</td>
+<td align="right">2.5391426</td>
+</tr>
+<tr>
+<td>宋喆</td>
+<td align="right">1296</td>
+<td align="right">0.00011370828</td>
+<td align="right">5152.0664</td>
+<td align="right">2.5304878</td>
+</tr>
+<tr>
+<td>萝莉</td>
+<td align="right">115</td>
+<td align="right">0.000010089855</td>
+<td align="right">8957.9795</td>
+<td align="right">2.5202932</td>
+</tr>
+<tr>
+<td>杨美味</td>
+<td align="right">121</td>
+<td align="right">0.000010616282</td>
+<td align="right">606.7459</td>
+<td align="right">2.493181</td>
+</tr>
+<tr>
+<td>吴亦凡</td>
+<td align="right">234</td>
+<td align="right">0.00002053066</td>
+<td align="right">13268.437</td>
+<td align="right">2.493003</td>
+</tr>
+<tr>
+<td>浸屎里</td>
+<td align="right">130</td>
+<td align="right">0.000011405923</td>
+<td align="right">452.97632</td>
+<td align="right">2.4838595</td>
+</tr>
+<tr>
+<td>养小鬼</td>
+<td align="right">262</td>
+<td align="right">0.000022987322</td>
+<td align="right">2158.3438</td>
+<td align="right">2.4814637</td>
+</tr>
+<tr>
+<td>江哥</td>
+<td align="right">974</td>
+<td align="right">0.00008545668</td>
+<td align="right">345.30493</td>
+<td align="right">2.479942</td>
+</tr>
+<tr>
+<td>阿修</td>
+<td align="right">503</td>
+<td align="right">0.00004413215</td>
+<td align="right">616.2741</td>
+<td align="right">2.4794445</td>
+</tr>
+<tr>
+<td>抢热门</td>
+<td align="right">335</td>
+<td align="right">0.000029392186</td>
+<td align="right">308.25677</td>
+<td align="right">2.4698045</td>
+</tr>
+<tr>
+<td>世勋</td>
+<td align="right">115</td>
+<td align="right">0.000010089855</td>
+<td align="right">1542.1354</td>
+<td align="right">2.458998</td>
+</tr>
+<tr>
+<td>盆友</td>
+<td align="right">283</td>
+<td align="right">0.000024829817</td>
+<td align="right">424.23758</td>
+<td align="right">2.4581518</td>
+</tr>
+<tr>
+<td>迷妹</td>
+<td align="right">306</td>
+<td align="right">0.000026847789</td>
+<td align="right">391.9121</td>
+<td align="right">2.4477751</td>
+</tr>
+<tr>
+<td>琪儿</td>
+<td align="right">415</td>
+<td align="right">0.000036411217</td>
+<td align="right">911.04236</td>
+<td align="right">2.4461467</td>
+</tr>
+<tr>
+<td>朱里安</td>
+<td align="right">195</td>
+<td align="right">0.000017108885</td>
+<td align="right">1480.7308</td>
+<td align="right">2.4291697</td>
+</tr>
+<tr>
+<td>柯基</td>
+<td align="right">137</td>
+<td align="right">0.000012020088</td>
+<td align="right">418.45804</td>
+<td align="right">2.4283874</td>
+</tr>
+<tr>
+<td>督尼</td>
+<td align="right">320</td>
+<td align="right">0.000028076118</td>
+<td align="right">7561.717</td>
+<td align="right">2.4274776</td>
+</tr>
+<tr>
+<td>血族</td>
+<td align="right">336</td>
+<td align="right">0.000029479925</td>
+<td align="right">897.6834</td>
+<td align="right">2.4200006</td>
+</tr>
+<tr>
+<td>美瞳</td>
+<td align="right">185</td>
+<td align="right">0.000016231506</td>
+<td align="right">305.56412</td>
+<td align="right">2.4142103</td>
+</tr>
+<tr>
+<td>蓝翅</td>
+<td align="right">636</td>
+<td align="right">0.000055801283</td>
+<td align="right">1351.7319</td>
+<td align="right">2.4104183</td>
+</tr>
+<tr>
+<td>瑞思</td>
+<td align="right">132</td>
+<td align="right">0.000011581399</td>
+<td align="right">445.85788</td>
+<td align="right">2.392941</td>
+</tr>
+<tr>
+<td>学生党</td>
+<td align="right">953</td>
+<td align="right">0.00008361419</td>
+<td align="right">521.8259</td>
+<td align="right">2.3849728</td>
+</tr>
+</tbody></table>
