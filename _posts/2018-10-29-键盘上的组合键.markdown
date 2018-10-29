@@ -2,7 +2,6 @@
 layout: post
 title:  "键盘上的组合键"
 ---
-
 ALT+SPACE+A=å  
 ALT+SPACE+B=∫  
 ALT+SPACE+D=∂  

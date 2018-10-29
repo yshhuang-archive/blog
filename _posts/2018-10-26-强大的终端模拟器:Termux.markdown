@@ -28,9 +28,8 @@ At first start a small base system is downloaded - desired packages can then be 
 
 ![com.termux](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-14-54-01-066_com.termux.png)
 
-
-
 ## 开始使用
+
 首先,打开Termux进入的home目录在Android系统中的位置是:/data/data/com.termux/files/home,
 另外环境变量$PREFIX=/data/data/com.termux/files/usr指向Termux的/usr目录,使用apt install vim 安装vim编辑器.
 ![com.termux](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-15-39-28-372_com.termux.png)
@@ -44,7 +43,9 @@ Termux有官方的软件源，网速挺快，与Linux软件源保持同步。
 无需root！无需root！无需root！不需要root权限Termux就可以正常运行，不过需求多的用户能root自然是最好了，很多需要root权限的命令就可以执行了，包括文件管理上也会很方便。
 * 可拓展性  
 很强，挖个坑，以后介绍。
+
 ## SSH登录
+
 在手机上使用命令行还是很不方便的,主要是键盘的问题,我们最好是能通过SSH在电脑上链接Termux,再进行操作,当然也可以用手机链接电脑,在外出的时候,电脑不在身边,也可以进行一些操作.  
 Termux终端中使用ssh访问远程服务器与Linux终端中使用ssh别无二致。但要使用ssh访问Android设备就不同了，Termux终端中sshd服务不支持密码验证，也就是说用户不能期望通过ssh user@server然后输入用户密码的方式从别的终端访问Android设备。Termux终端中sshd只支持密钥验证。
 
@@ -77,7 +78,9 @@ scp admin@172.16.128.96:.ssh/id_rsa.pub .
 cat id_rsa.pub >> .ssh/authorized_keys
 ```
 当然也可以通过其他方式来传输公钥,反正最终的目的就是把电脑的公钥内容写入授权文件里就好了.
-### ssh连接
+
+4. ssh连接
+
 1. 在手机上启动sshd服务
 ```
 sshd
@@ -92,7 +95,9 @@ ssh u0_a494@172.16.128.245 -p 8022
 ![mac](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/20181029162807.png)
 ![android](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-16-27-34-403_com.termux.png)
 后面可以做什么事就请发挥你自己的想象力吧.
+
 ## 参考资料
+
 [神器Termux的使用日常](https://www.jianshu.com/p/5c8678cef499)  
 [你浪费了一台电脑](https://www.jianshu.com/p/312cc544e275)  
 [ubuntu使用SSH通过Termux登录Android设备](ubuntu使用SSH通过Termux登录Android设备)  
