@@ -2,7 +2,7 @@
 # layout: post
 title:  "新词发现"
 # date:   2018-09-29 18:24:14 +0800
-categories: NLP
+tags: NLP
 ---
 ## 参考资料
 主要参考了以下两篇文章：  

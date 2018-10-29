@@ -1,6 +1,7 @@
 ---
 # layout: post
 title:  "键盘上的组合键"
+tags: tips
 ---
 ALT+SPACE+A=å  
 ALT+SPACE+B=∫  
