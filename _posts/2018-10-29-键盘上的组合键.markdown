@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "键盘上的组合键"
+---
+
+ALT+SPACE+A=å  
+ALT+SPACE+B=∫  
+ALT+SPACE+D=∂  
+ALT+SPACE+E=´  
+ALT+SPACE+F=ƒ  
+ALT+SPACE+G=©  
+ALT+SPACE+H=˙  
+ALT+SPACE+I=ˆ  
+ALT+SPACE+J=∆  
+ALT+SPACE+K=˚  
+ALT+SPACE+L=¬  
+ALT+SPACE+M=µ  
+ALT+SPACE+N=˜  
+ALT+SPACE+O=ø  
+ALT+SPACE+P=π  
+ALT+SPACE+Q=œ  
+ALT+SPACE+R=®    
+ALT+SPACE+S=~~~~    
+ALT+SPACE+T=†  
+ALT+SPACE+U=¨  
+ALT+SPACE+V=√  
+ALT+SPACE+W=∑  
+ALT+SPACE+X=≈  
+ALT+SPACE+Y=¥  
