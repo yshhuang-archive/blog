@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "k-近邻算法"
+# date:   2018-09-29 18:24:14 +0800
+categories: 机器学习
+published: true
+---
+## 算法简介
+k-近邻算法可以说是我接触过的最简单的机器学习算法了，其思路非常直白：给定一个训练集，输入一个实例，在训练集中找到和输入实例最近的k个点，这k个点中数量最多的类就是输入实例的类。可以看出来，k邻近算法的关键就是怎么样找到这最近的k个点。通过遍历训练集挨个计算与输入实例的距离肯定是可以做的，那就先用这种方法来实现一次。
+
+## python实现
+
+* 首先，创建一个模拟训练集
+
+``` python
+from numpy import *
+import operator
+
+def create_data_set():
+    """
+    创建数据集
+    :return group: 数据集
+    :return labels: 分类标签
+    """
+    group = array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 1.0]])
+    labels = ['A', 'A', 'B', 'B']
+    return group, labels
+```
+
+模拟训练集忠有4条数据，用数组表示，数组的每个元素代表训练实例的一个属性值。这里先不关注它的实际意义，把它当做二维坐标中的点即可。
+
+* 然后，求K近邻
+
+```python
+def classify0(in_x, data_set, labels, k):
+    """
+    kNN算法，分类器
+    :param in_x: 测试集
+    :param data_set: 训练集
+    :param labels: 分类标签
+    :param k: kNN算法参数，选择距离最小的k个点
+    :return:
+    """
+    data_set_size = data_set.shape[0]  # numpy函数shape返回array每一维的长度,shape[0]即第一维的长度
+    diff_mat = tile(in_x, (data_set_size, 1)) - data_set  # numpy函数tile将数组in_x在行方向上重复data_set_size次，列方向上一次
+    sq_diff_mat = diff_mat ** 2
+    sq_distance = sq_diff_mat.sum(axis=1)  # 在第二维上进行求和（即每一列相加,axis只能是0或1
+    distance = sq_distance ** 0.5  # 算出欧氏距离
+    sorted_dist_indices = distance.argsort()  # 返回排序后的索引
+
+    class_count = {}  # 记录标签出现的次数
+    for i in range(k):
+        vote_i_label = labels[sorted_dist_indices[i]]
+        class_count[vote_i_label] = class_count.get(vote_i_label, 0) + 1
+    sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(1),
+                                reverse=True)  # 字典排序itemgetter(0)根据key排序，itemgetter(1)根据value排序
+    return sorted_class_count[0][0]
+```
+
+## 注意的问题：  
+
+* 样本不平衡  
+例如某个类样本容量很大，这样测试样本的K个邻居中，大容量的类可能占多数（但是并不是最靠近测试样本的），测试样本就会被归为大容量的类。针对这个问题，可以采用距离权值的方法（可以和距离成反比）。
+* 归一化  
+使用 kNN 时需要根据特征数据的取值区间来调整特征矩阵
+```python
+def auto_norm(data_set):
+    """
+    数据归一化
+    :param data_set:原特征矩阵
+    :return norm_data_set: 归一化后的特征矩阵
+    :return ranges: 每一列的数据最大值最小值之差
+    :return min_vals: 每一列的最小值
+    """
+    min_vals = data_set.min(0)  # min(0)以行为维度，即计算每一列的最小值
+    max_vals = data_set.max(0)
+    ranges = max_vals - min_vals
+    m = data_set.shape[0]
+    norm_data_set = data_set - tile(min_vals, (m, 1))
+    norm_data_set = norm_data_set / tile(ranges, (m, 1))  # numpy 的"/"表示矩阵的每一个元素相除，矩阵的除法用linalg.solve(matA,matB)
+    return norm_data_set, ranges, min_vals
+```
+
+* 计算量大  
+对每一个待分类的文本都要计算它到全体已知样本的距离，才能求得它的K个最近邻点。目前常用的解决方法是事先对已知样本点进行剪辑，事先去除对分类作用不大的样本。该算法比较适用于样本容量比较大的类域的自动分类，而那些样本容量较小的类域采用这种算法比较容易产生误分。
+
+* 多分类
+有时候我们并不想知道测试实例的一个具体分类，而是想知道它属于每个分类的概率是多少。这时我们可以取测试实例的K个邻居中任意分类的数量除以K，作为此分类的概率。
+
+## 完整代码
+[https://github.com/yshhuang/practice-code/tree/master/ml-in-action/02-kNN](https://github.com/yshhuang/practice-code/tree/master/ml-in-action/02-kNN)
+
+## 参考文章：  
+[【量化课堂】一只兔子帮你理解 kNN](https://www.joinquant.com/post/2227)  
+[Python3《机器学习实战》学习笔记（一）：k-近邻算法(史诗级干货长文)](https://blog.csdn.net/c406495762/article/details/75172850)  
+[一文搞懂k近邻（k-NN）算法（一）](https://zhuanlan.zhihu.com/p/25994179)
