@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title:  "强大的终端模拟器:Termux"
 categories: linux android
 ---

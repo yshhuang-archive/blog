@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title:  "k-近邻算法"
 # date:   2018-09-29 18:24:14 +0800
 categories: 机器学习

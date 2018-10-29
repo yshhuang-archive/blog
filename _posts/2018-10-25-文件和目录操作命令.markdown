@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title:  "文件和目录操作命令"
 categories: linux cli
 ---
