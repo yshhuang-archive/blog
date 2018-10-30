@@ -5,7 +5,7 @@ tags: tips
 key: 20181029
 sharing: true
 ---
-ALT+SPACE+A=å  
+ALT+SPACE+A=å  
 ALT+SPACE+B=∫  
 ALT+SPACE+D=∂  
 ALT+SPACE+E=´  
