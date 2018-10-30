@@ -111,7 +111,7 @@ comments:
 
   ## Disqus
   disqus:
-    shortname: yshhuang-github-io # the Disqus shortname for the site
+    shortname: blog-yshhuang # the Disqus shortname for the site
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
