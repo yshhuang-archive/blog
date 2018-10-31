@@ -3,7 +3,6 @@
 title:  "键盘上的组合键"
 tags: tips
 key: 20181029
-sharing: true
 ---
 ALT+SPACE+A=å  
 ALT+SPACE+B=∫  
