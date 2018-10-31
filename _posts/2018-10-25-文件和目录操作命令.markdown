@@ -3,6 +3,7 @@
 title:  "文件和目录操作命令"
 tags: linux cli
 sharing: true
+key: 20181025
 ---
 
 ## 常用命令

@@ -3,6 +3,7 @@
 title:  "Ubuntu使用心得"
 tags: linux cli
 # sharing: true
+key: 201810242
 ---
 为什么要用Ubuntu呢?因为用了好多年的Windows用腻了,想换个口味.关于怎么安装不想多说了,自行百度.只说一点,最好是装Windows+Ubuntu双系统,别急着吧Windows删了.我一开始就是这样干的,但是安装失败,提示找不到系统文件,无奈只得重装一遍Windows,再在Windows上装Ubuntu.另外,保留Windows也可以应对不时之需,因为有些事情是在Windows先能做,Ubuntu做不了的(不要说装虚拟机,所有的虚拟机都没有原生系统用着舒服).比如,要是有哪个妹子电脑故障了,要你帮忙重装系统,你得在Windows下制作启动盘吧😏.还有一些工具,例如手机开启Root的软件,我就只找到了Windows版的.
 
