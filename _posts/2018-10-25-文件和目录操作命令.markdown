@@ -27,7 +27,7 @@ ls [OPTION]... [FILE]...
 ```
 * 功能  
 列出一个目录包含的文件及子目录
-* 选项  
+* 选项
 
 |选项|长选项|描述|
 |--|--|--|
@@ -40,8 +40,37 @@ ls [OPTION]... [FILE]...
 |-S||命令输出结果按照文件大小来排序。|
 |-t||按照修改时间来排序。|
 
-# dd
+* 长格式输出  
+下面的例子来自CentOS系统
+```shell
+drwxrwxr-x 3 deploy deploy 4096 Sep 11 02:11 Ccmh_Project
+drwxr-xr-x 4 deploy deploy 4096 Aug 29 15:30 data
+drwxrwxr-x 3 deploy deploy 4096 Jul 25 15:41 Dmzj_Project
+drwxrwxr-x 5 deploy deploy 4096 Jul  2 11:48 download
+drwxrwxr-x 2 rd     rd     4096 Jul  3 11:07 export
+drwxrwxr-x 4 deploy deploy 4096 Jul  4 19:48 Image_Project
+drwxr-xr-x 4 deploy deploy 4096 Jul  4 19:51 kk-aliyun-util
+drwxrwxr-x 3 deploy deploy 4096 Jul 13 19:00 Kmh_Project
+-rw-rw-r-- 1 deploy deploy  327 Jul 31 18:35 proxy.py
+```
+以第一个文件(目录)为例,看一下各个输出字段的含义
 
+|字段|含义|
+|--|--|
+|drwxrwxr-x|对于文件的访问权限。第一个字符指明文件类型。在不同类 型之间，开头的“-”说明是一个普通文件，“d”表明是一 个目录。其后三个字符是文件所有者的访问权限，再其后的 三个字符是文件所属组中成员的访问权限，最后三个字符是 其他所有人的访问权限.|
+|3|文件的硬链接数目|
+|deploy|文件属主的用户名|
+|deploy|文件所属用户组的名字|
+|4096|以字节数表示的文件(目录)大小|
+|Sep 11 02:11|上次修改文件的时间和日期|
+|Ccmh_Project|文件(目录)名|
 
+### file
+* 用法
+```shell
+file [OPTION...] [FILE...]
+```
+* 功能
+打印文件类型
 
 ### cd(change directory)
