@@ -2,5 +2,31 @@
 layout: post
 title:  "文件和目录操作命令"
 categories: linux cli
+<<<<<<< HEAD
 published: false
 ---
+=======
+---
+## 
+
+## 常用命令
+
+### 1.pwd(print working dictionary)
+* 用法
+```shell
+pwd [-LP]
+```
+* 功能  
+查看”当前工作目录“的完整路径
+* 参数  
+一般情况下不带任何参数  
+如果目录是链接时：  
+-L 目录连接链接时，输出连接路径  
+-P 输出物理路径
+
+### 2.ls(list files)
+* 用法
+```
+ls [OPTION]... [FILE]...
+```
+>>>>>>> 3a51abcd027af2c4a6943d79c47b5f735491886f

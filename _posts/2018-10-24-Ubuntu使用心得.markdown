@@ -2,8 +2,26 @@
 layout: post
 title:  "Ubuntu使用心得"
 categories: linux cli
-# published: false
-# published: false
+published: false
 ---
-sadassssssssf
-ww
+为什么要用Ubuntu呢?因为用了好多年的Windows用腻了,想换个口味.关于怎么安装不想多说了,自行百度.只说一点,最好是装Windows+Ubuntu双系统,别急着吧Windows删了.我一开始就是这样干的,但是安装失败,提示找不到系统文件,无奈只得重装一遍Windows,再在Windows上装Ubuntu.另外,保留Windows也可以应对不时之需,因为有些事情是在Windows先能做,Ubuntu做不了的(不要说装虚拟机,所有的虚拟机都没有原生系统用着舒服).比如,要是有哪个妹子电脑故障了,要你帮忙重装系统,你得在Windows下制作启动盘吧😏.还有一些工具,例如手机开启Root的软件,我就只找到了Windows版的.
+
+## 常用工具安装
+### 浏览器
+这个看个人喜好吧,如果你喜欢火狐,也可以直接用,不过我是用惯了Chrome,所以第一个要装的就是它了.使用命令行来安装:
+```shell
+# 系统更新
+sudo apt-get update 
+sudo apt-get upgrade
+# 卸载火狐
+sudo apt-get remove firefox
+# 下载Chrome安装包: 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+# 下载完后，运行如下命令安装。 
+sudo dpkg -i google-chrome*; 
+sudo apt-get -f install
+```
+不习惯用命令行的也可以去[Chrome官网](https://www.google.com/chrome/)下载,双击下载后的文件就可以安装了
+### 搜狗拼音输入法
+虽然我把系统设置成英文了,但是有些时候还是不可避免的需要输入中文的(比如在写这篇文章的时候),所以去下个搜狗拼音输入法吧.
+
