@@ -2,5 +2,8 @@
 layout: post
 title:  "Ubuntu使用心得"
 categories: linux cli
-published: false
+# published: false
+# published: false
 ---
+sadassssssssf
+ww
