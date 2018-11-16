@@ -4,18 +4,32 @@ tags: 机器学习 线性代数 数学
 key: 20181107
 ---
 ## 基本概念
-
-### 标量(scalar)  
+* 标量(scalar)  
 一个标量就是一个单独的数.
-
-### 向量(vector)  
+* 向量(vector)  
 一个向量是一列数,通过序列中的索引,可以确定每个单独的数.
-
-### 矩阵(matrix)  
+* 矩阵(matrix)  
 矩阵是一个二维数组，其中的每一个元素由两个索引（而非一个）所确定。  
-* $A_{j,j}$表示矩阵$A$第$i$行第$j$列的元素.
-* $A_{i,:}$表示矩阵$A$垂直坐标$i$上的一行元素.
-* $A_{:,j}$便是矩阵$A$水平坐标$j$上的一列元素.
+    * $A_{j,j}$表示矩阵$A$第$i$行第$j$列的元素.
+    * $A_{i,:}$表示矩阵$A$垂直坐标$i$上的一行元素.
+    * $A_{:,j}$便是矩阵$A$水平坐标$j$上的一列元素.
 $$\begin{bmatrix}A_{1,1} & A_{1,2}\\\\A_{2,1} &A_{2,2}\end{bmatrix}$$
+* 张量(tensor)  
+坐标在$n$維空間內，有$n^r$個分量的一種量.$r$稱為該張量的秩或階（与矩阵的秩和阶均无关系).
+* 转置(transpose)  
+矩阵A的转置写作$A^{\mathrm{T}}$,并且:
+$$A_{ij}^{\mathrm {T} }=A_{ji} for {\displaystyle 1\leq i\leq n,} 1\leq i\leq n, {\displaystyle 1\leq j\leq m} 1\leq j\leq m$$
+![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Matrix_transpose.gif)
 
-### 张量(tensor )
+## 矩阵运算
+* 标量和矩阵运算,就是将其与矩阵的的每个元素执行相应的运算  
+例如,$D=a \cdot B + c$,其中 $D_{i,j}=a \cdot B_{i,j} + c$
+* 矩阵加法   
+两个形状一样(行数,列数相等)的矩阵才可以相加,矩阵相加即对应位置元素相加.  
+例如$C=A+B$,其中$C_{i,j}=A_{i,j}+B_{i.j}$
+* 矩阵乘积(matrix product)  
+通常,单说矩阵乘积时,指的是一般矩阵乘积.它只有在第一个矩阵的列数(column)和第二个矩阵的行数(row)相同时才有定义.  
+给定两个矩阵$A=(a_{i,j}) \in R^{m,n}$,$B=(b_{i,j})\in R^{n,p}$,则它们的乘积记作$AB或A \cdot B$会是一个$m\times p$的矩阵.其乘积的元素由下面的式子得出:  
+$$(AB)_{ij} = \sum_{r=1}^n a_{ir}b_{rj} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}$$
+
+* 
