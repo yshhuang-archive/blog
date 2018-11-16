@@ -149,4 +149,4 @@ $$
 |\Phi|$\Phi$|\phi|$\phi$|
 |X|$X$|\chi|$\chi$|
 |\Psi|$\Psi$|\psi|$\psi$|
-|\Omega|$\Omega$|\moega|$\omega$|
+|\Omega|$\Omega$|\omega|$\omega$|
