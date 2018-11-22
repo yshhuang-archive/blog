@@ -2,7 +2,7 @@
 title: 曾经用过或者正在用的签名
 tags: 数学 LaTeX TeX
 key: 20181112
-# published: false
+published: false
 ---
 * 千江有水千江月,万里无云万里天
 * 博观而约取,厚积而薄发
