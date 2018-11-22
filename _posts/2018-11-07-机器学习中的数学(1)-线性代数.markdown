@@ -32,4 +32,12 @@ $$A_{ij}^{\mathrm {T} }=A_{ji} for {\displaystyle 1\leq i\leq n,} 1\leq i\leq n,
 给定两个矩阵$A=(a_{i,j}) \in R^{m,n}$,$B=(b_{i,j})\in R^{n,p}$,则它们的乘积记作$AB或A \cdot B$会是一个$m\times p$的矩阵.其乘积的元素由下面的式子得出:  
 $$(AB)_{ij} = \sum_{r=1}^n a_{ir}b_{rj} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}$$
 
-* 
+## 单位矩阵和逆矩阵  
+$n$阶单位矩阵,是一个$n\times n$的方形矩阵,其主对角线元素为1,其余元素为0,记作$I_n$.  
+$A$的逆矩阵记作$A^{-1}$,满足以下条件  
+$$A\cdot A=I_n$$ 
+
+## 线性相关和生成子空间
+一组向量的生成子空间（span）是原始向量线性组合后所能抵达的点的集合。   
+确定$Ax=b$是否有解，相当于确定向量$b$是否在$A$列向量的生成子空间中。这个特殊的生成子空间被称为$A$的列空间（column space）或者$A$的值域(range).  
+在线性代数里，矢量空间的一组元素中，若没有矢量可用有限个其他矢量的线性组合所表示，则称为线性无关或线性独立 (linearly independent)，反之称为线性相关(linearly dependent)。 
