@@ -23,5 +23,34 @@ sudo apt-get -f install
 ```
 不习惯用命令行的也可以去[Chrome官网](https://www.google.com/chrome/)下载,双击下载后的文件就可以安装了
 ### 搜狗拼音输入法
-虽然我把系统设置成英文了,但是有些时候还是不可避免的需要输入中文的(比如在写这篇文章的时候),所以去下个搜狗拼音输入法吧.
+虽然我把系统设置成英文了,但是有些时候还是不可避免的需要输入中文的(比如在写这篇文章的时候),所以去下个搜狗拼音输入法吧.  
+[教程](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
+![screenshot from 2018-11-05 22-57-03](https://user-images.githubusercontent.com/9245002/48005397-5126dc00-e14e-11e8-8a3d-6d5fdf7d2f00.png)
 
+### 预装软件卸载
+安装系统的时候是默认安装的，装了一些没用的东西，可以选择性地删掉。
+
+* 卸载libreOffice   
+libreoffice事ubuntu自带的开源office软件，体验效果不如windows上的office，因为我基本不用这些东西,所以直接删了。偶尔需要用到也是用网页版的office365, 使用教育邮箱注册账号可以免费使用。
+```shell
+#  卸载libreOffice 
+sudo apt-get remove libreoffice-common
+```
+
+* 卸载掉亚马逊链接
+```shell
+sudo apt-get remove unity-webapps-common
+```
+
+
+### 配置主题
+
+
+### 配置vim
+
+### 安装zsh
+
+
+### 安装java
+
+### 安装vscode
