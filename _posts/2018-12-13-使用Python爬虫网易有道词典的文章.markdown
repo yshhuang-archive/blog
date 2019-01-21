@@ -1,11 +1,106 @@
 ---
-title: 使用Python爬虫网易有道词典的文章
+title: 使用Python爬虫收集有道词典的文章
 tags: python 爬虫 英语学习 
 key: 20181213
 ---
 ## 起源
 之前在有道词典上的"有道晨读"栏目看过一些连载的双语文章,还有真人朗读,觉得很不错,像<小王子>,<老人与海>,<追风筝的人>等.  
-但是专栏的文章是按时间排序的,想要看一部完整的连载作品很不方便,所以就想通过爬虫的方法把这些文章整理出来,方便查看防止丢失(有道词典上过老的文章会不再列出)
+但是专栏的文章是按时间排序的,同一部作品并不连续出现,想要看一部完整的连载作品很不方便,所以就想通过爬虫的方法把这些文章整理出来,方便查看防止丢失(有道词典上过老的文章会不会出现在列表中,只保留最新500篇)
+
+## 环境
+手机:Android 8.0.0  
+电脑:macOS 10.14.1,Charles 4.2.7,Python 3.7.0,mongoDB 4.0.0
 
 ## 准备工作
-![](https://user-images.githubusercontent.com/9245002/50479763-27ce5200-0a13-11e9-83f0-02c38ae87689.png)
+
+1. 设置手机HTTP代理：确保移动设备与 Mac 笔记本在同一局域网内，添加代理ip地址（Mac内网地址）和端口号（8888）,如图所示：
+![wechatimg2](https://user-images.githubusercontent.com/9245002/51451163-f8d7a180-1d6e-11e9-827b-76d9c533b38f.jpeg)
+2. 在 Mac 中打开 Charles 应用
+3. 在移动端访问接口数据，在 Charles 弹出的确认窗中选择 Allow，允许即可
+4. 这里,我们浏览有道晨读的专栏主页,在Charles中找到获取文章列表的接口:http://dict.youdao.com/infoline/style?client=mobile&apiversion=3.0&lastId=0&style=morning&order=desc&size=10&keyfrom=mdict.7.8.5.android&model=MI_5s_Plus&mid=8.0.0&imei=99000828489816&vendor=xiaomi&screen=1080x1920&ssid=kkmh-2.4&network=wifi&abtest=0.
+ ![wechatimg1](https://user-images.githubusercontent.com/9245002/51451162-f70dde00-1d6e-11e9-80dd-edcd3b71007f.jpeg)
+![20190121105502](https://user-images.githubusercontent.com/9245002/51451159-efe6d000-1d6e-11e9-92b5-f2550bbde294.png)
+
+
+## 分析(踩坑)过程
+***这一节主要是记录一下给自己看的,嫌麻烦可直接略过,从[下一节](#正式开始)开始看***
+
+经过分析,接口中的很多参数对于我获取数据都是无用的,简化后的接口为
+https://dict.youdao.com/infoline/style?style=morning&client=mobile&lastId=0&size=10  
+这是一个分页查询的接口,style和client是不变的,lastId表示id的最大值,size即每页大小,默认10.如此,把每次返回文章列表(id从大到小排序)的最后一篇文章的id作为下一次请求的参数,即可遍历全部文章,代码如下
+```python
+import urllib.request
+import json
+
+def get_cards(last_id=0, size='10'):
+    url = cardsUrl
+    if last_id is not None:
+        url = url + '&lastId=' + last_id
+    if size is not None:
+        url = url + '&size=' + size
+    response = urllib.request.urlopen(url)
+    result = response.read().decode('utf-8')
+
+    card_list = json.loads(result)['cards']
+    if len(card_list) > 0:
+        last_id = card_list[-1]['id']
+    return card_list, last_id
+
+def save_articles():
+    global cards
+    card_list, lastId = get_cards(None, '10')
+    cards = cards + card_list
+    # insert_into_mysql(cards)
+    while len(card_list) > 0:
+        card_list, lastId = get_cards(lastId, '10')
+        cards = cards + card_list
+    print('文章列表下载完成,共%d篇文章' % (len(cards)))
+    insert_into_mysql()
+```
+其实用这种方法只能获取到"有道晨读"栏目的最新500篇文章,再旧点的文章通过这个接口就获取不到了.不过,通过在浏览器中查看文章的详情页,找到了一个根据文章的pid(有道词典的文章编号)获取文章详情的接口:http://xue.youdao.com/sw/m/1417209?showmethod=native .返回结果里有一个related字段,就是页面上的相关阅读,是不是可以通过递归的访问文章的related就可以遍历所有的文章?试了一下,结果发现只有一部分文章会出现在related里,有一些永远不会出现,而且最新的文章都不出现的related里的.  
+![20190121142930](https://user-images.githubusercontent.com/9245002/51456621-5bd63200-1d89-11e9-9cce-c3fd6f624c56.png)
+不过,我发现这个接口里的文章pid都是数字,我只要不停改变这个数字应该就能获取所有文章了.而且小于1000000的pid是没有文章的,在当时(2018-12-13)最新的文章pid在1600000~1700000.所以我先爬取1000000~1600000的旧数据,再以后每次想更新文章库的时候可以根据已经爬取的最大pid来爬取新的数据.  
+我一开始是用的MySQL来存储爬取到的文章,但是后来发现文章的字段格式不太规范,总是出现空字段或者字符串过长等问题,写了好多控制判断之类的,好麻烦,后来索性用MongoDB来存储,方便了很多,直接插入一个json就行了.
+
+## 正式开始
+首先,创建MongoDB库,并把pid设为唯一索引,使用pymongo获取数据库连接
+```python
+import pymongo
+
+client = pymongo.MongoClient()
+db = client['dish']
+collection = db['youdao_dict']
+```
+根据pid获取文章信息
+```python
+articleUrl_suffix = '?showmethod=native&keyfrom=wap&client=wap'
+articleUrl_prefix = 'http://xue.youdao.com/sw/m/'
+
+def crawler_by_pid(pid):
+    try:
+        response = urllib.request.urlopen(articleUrl_prefix + str(pid) + articleUrl_suffix)
+        result = response.read().decode('utf-8')
+        article = json.loads(result)
+        if article is None:
+            return {}
+        return article
+    except:
+        return crawler_by_pid(pid)
+```
+插入文章
+```python
+def insert_article(article):
+    try:
+        collection.insert_one(article).inserted_id
+    except pymongo.errors.DuplicateKeyError:
+        pass
+```
+一开始文章很多,可以开启多线程分别爬取,完整代码可以参考[这里](https://github.com/yshhuang/dish/blob/master/youdaocidian/save-to-mongodb.py)
+
+## 成果
+截止到2019-01-21更新,已经爬了30多万篇文章,而且信息很详细,包含文章内容(html格式),栏目,标签,音视频链接(如果有)等.
+![20190121152842](https://user-images.githubusercontent.com/9245002/51458793-6694c500-1d91-11e9-9a44-e7a6b8257430.png)
+![20190121152831](https://user-images.githubusercontent.com/9245002/51458799-698fb580-1d91-11e9-9a67-545f356c50b3.png)
+
+查一下<小王子>连载的文章,看了一下还不错🤔
+![20190121154107](https://user-images.githubusercontent.com/9245002/51459344-32ba9f00-1d93-11e9-849f-658d6a856ffa.png)
