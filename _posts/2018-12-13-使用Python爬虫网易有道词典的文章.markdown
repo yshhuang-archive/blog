@@ -102,5 +102,5 @@ def insert_article(article):
 ![20190121152842](https://user-images.githubusercontent.com/9245002/51458793-6694c500-1d91-11e9-9a44-e7a6b8257430.png)
 ![20190121152831](https://user-images.githubusercontent.com/9245002/51458799-698fb580-1d91-11e9-9a67-545f356c50b3.png)
 
-查一下<小王子>连载的文章,看了一下还不错
+查一下<小王子>连载的文章,看了一下还不错.  
 ![20190121154107](https://user-images.githubusercontent.com/9245002/51459344-32ba9f00-1d93-11e9-849f-658d6a856ffa.png)
