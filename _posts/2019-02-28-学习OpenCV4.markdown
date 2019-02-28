@@ -1,0 +1,115 @@
+---
+title: 学习OpenCV4(一)
+tags: c++ 图像处理 OpenCV 
+key: 20190228
+---
+
+最近公司要做一些关于图片的业务,遂学习一下相关知识.我在学习一项新技术的时候,习惯是先找几本比较好的书籍来看,然后在考虑实际场景.这次找了两本书:  
+1. [Digital Image Processing 4th Edition [Rafael C. Gonzalez]](https://pan.baidu.com/s/1uWnysDUVW3dm68e4ZCoqSQ)
+2. [Learning OpenCV 3--Computer Vision in C++ with the OpenCV Library](https://1024ebook.ctfile.com/fs/3124774-338165445)  
+第一本就是比较有名的"数字图像处理",第三版有中文版,但是很多吐槽翻译的太烂,所以这里我就选择了第四版的英文来看.第二本比较偏实践的,正文含很多可执行代码,可以用来练手.两本书我是一起看的(虽然在内容是两本书没啥关联).我安装的是OpenCV 4.0.1,书是关于OpenCV 3的,但是语法差不多.另外有一本"Learning OpenCV"版本较老,书中代码在OpenCV 4环境下无法执行,所以还是不要看了.
+
+## 安装
+这里仅介绍在MacOS下的安装方法,其他系统没试过,也不想试.
+* 首先,安装Xcode,这个不多说
+* 安装 Homebrew  
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+* 安装 OpenCV 4
+> brew install opencv  
+
+注意,  
+1.使用brew下载opencv的时候回自动下载pkg-config和cmake,如果没有正常下载,请使用brew手动下载这两个  
+2.截至2019-02-28,网上的绝大多数教程都是关于OpenCV3或OpenCV2的,对OpenCV4并不适用,下面会提到
+
+## 编译程序
+编写一段书中的代码: *display-picture.cpp*
+```c++
+#include <opencv2/opencv.hpp>
+
+int main(int argc, char **argv) {
+    cv::Mat img = cv::imread(argv[1], -1);
+    if (img.empty()) {
+        return -1;
+    }
+    cv::namedWindow("Example1", cv::WINDOW_AUTOSIZE);
+    cv::imshow("Example1", img);
+    cv::waitKey(0);
+    cv::destroyWindow("Example1");
+    return 0;
+}
+```
+### 1. 使用g++  
+一开始在网上找的资料基本都是这种:
+> g++ $(pkg-config --libs --cflags opencv) display-picture.cpp -o display-picture
+
+但是会报错,提示: *'opencv2/opencv.hpp' file not found* ,试了好多方法都没有解决,后来觉得可能是版本的问题,所以把opencv改为opencv4,才解决了这个问题.  
+>g++ $(pkg-config --libs --cflags opencv) display-picture.cpp -o display-picture
+
+但是又出现了另外一个问题: 
+```shell
+In file included from /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/opencv.hpp:52:
+In file included from /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core.hpp:52:
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvdef.h:656:4: error: "OpenCV 4.x+ requires enabled C++11 support"
+```
+macOS下的g++版本是4.2.1,可能是他默认的-std c++版本比较低,所以才会这样,原因如下:
+>>如果您说的是 GUN 的 GCC 而不是 Clang 的话，怕是一句 `brew install gcc` 就能解决了。题主作为有这种需求但是还会跑来知乎找答案的有志青年，相信你一定已经或迟早会安装brew的。--然而 brew 又需要先安装 xcode command line tool。现在的 xcode command line tool 自带 clang。还强行把 gcc 这个命令名占了。所以你只能委屈的使用 gcc-7 调用 GNU 的 gcc 了。<img src="https://pic4.zhimg.com/v2-4654cf683fdb14a41aa6974d07bcc7b3_b.png" data-rawwidth="811" data-rawheight="275" class="origin_image zh-lightbox-thumb" width="811" data-original="https://pic4.zhimg.com/v2-4654cf683fdb14a41aa6974d07bcc7b3_r.jpg">
+作者：杨涛
+链接：https://www.zhihu.com/question/20588567/answer/166719802
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+所以在命令中指定 -std=c++11就行了(大于等于11都可以):
+> g++ $(pkg-config --cflags --libs opencv4) -std=c++14  display-picture.cpp -o display-picture
+
+可以参考一下[这篇文章](https://medium.com/@jaskaranvirdi/setting-up-opencv-and-c-development-environment-in-xcode-b6027728003)
+
+### 2.使用cmake
+1. 在*display-picture.cpp*所在目录下新建文件CMakeLists.txt,内容如下
+``` shell
+cmake_minimum_required(VERSION 3.13)
+project(display-picture)
+find_package(OpenCV)
+set(CMAKE_CXX_STANDARD 14)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable(display-picture display-picture.cpp)
+```
+2. 执行命令:
+```prel
+cmake .
+```
+3. 在CMakeLists.txt末尾加上一行:  
+> target_link_libraries( display-picture ${OpenCV_LIBS} )
+4. 执行命令
+```shell
+make
+```
+
+### 3.使用Clion
+在Clion中新建*C++ Executable*项目,修改main.cpp为:
+```c++
+#include <opencv2/opencv.hpp>
+
+int main(int argc, char **argv) {
+    cv::Mat img = cv::imread(argv[1], -1);
+    if (img.empty()) {
+        return -1;
+    }
+    cv::namedWindow("Example1", cv::WINDOW_AUTOSIZE);
+    cv::imshow("Example1", img);
+    cv::waitKey(0);
+    cv::destroyWindow("Example1");
+    return 0;
+}
+```
+修改CMakeLists.txt为:
+```txt
+cmake_minimum_required(VERSION 3.13)
+project(learning_opencv3)
+find_package(OpenCV)
+set(CMAKE_CXX_STANDARD 14)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable(learning_opencv3 main.cpp)
+target_link_libraries( learning_opencv3 ${OpenCV_LIBS} )
+```
+执行build,即在cmake-build-debug目录下生成display-picture可执行文件.
+![20190228204758](https://user-images.githubusercontent.com/9245002/53567513-65c62e80-3b9a-11e9-9278-e35999a155cc.png)
