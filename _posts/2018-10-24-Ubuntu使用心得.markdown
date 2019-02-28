@@ -29,19 +29,21 @@ sudo apt-get -f install
 
 ### 预装软件卸载
 安装系统的时候是默认安装的，装了一些没用的东西，可以选择性地删掉。
-
 * 卸载libreOffice   
 libreoffice事ubuntu自带的开源office软件，体验效果不如windows上的office，因为我基本不用这些东西,所以直接删了。偶尔需要用到也是用网页版的office365, 使用教育邮箱注册账号可以免费使用。
 ```shell
 #  卸载libreOffice 
 sudo apt-get remove libreoffice-common
 ```
-
 * 卸载掉亚马逊链接
 ```shell
 sudo apt-get remove unity-webapps-common
 ```
-
+* 卸载自带媒体播放器　　
+自带的播放器不好用，反正我下载的ＭＰ４都打不开，建议安装ＶＬＣ
+```
+sudo apt-get remove totem-gstreamer totem-common
+```
 
 ### 配置主题
 
