@@ -92,5 +92,23 @@ def insert_movies(plid):
 
 <img width="800" src="https://user-images.githubusercontent.com/9245002/51838939-b26fdd00-2342-11e9-8682-4063c841b3d9.png">
 
-可以看出
-![20190128212244](https://user-images.githubusercontent.com/9245002/51839004-e5b26c00-2342-11e9-819e-e6132817194b.png)
+可以看出,订阅数最多的都是一些subscribeId比较小的,这可能是因为最开始推出的订阅号都是一些竞品,审核比较严格,还有就是时间的积累,订阅用户因此比较多.
+
+然后,我们还可以看到有不少订阅号是没有发布内容的:
+<img width="800" src="https://user-images.githubusercontent.com/9245002/51839004-e5b26c00-2342-11e9-819e-e6132817194b.png">
+
+可以统计出最火(浏览次数最多)的内容,结果如下(截至2019-02-28)
+|标题|地址|观看次数|订阅号|
+|-|-|-|-|
+|爱情应有的样子|http://c.open.163.com/mob/video.htm?plid=MC9FQL66A&mid=MCA50R4D7|526万|TED首播|
+|口才概述|http://c.open.163.com/mob/video.htm?plid=M7GH4L3UO&mid=M7GHH3BUN|416万|北京航空航天大学|
+|导论：王阳明与阳明心学|http://c.open.163.com/mob/video.htm?plid=M7GF17HPS&mid=M7GHGQTFG|390万|浙江大学|
+|提升自信的技巧|http://c.open.163.com/mob/video.htm?plid=MBOR278SK&mid=MBP8E2U4J|388万|【TED】Day Day Up|
+|副总裁珍妮特迪克森-院校中的爱与包容|http://c.open.163.com/mob/video.htm?plid=M6G3D585I&mid=M6G3JGJCJ|364万|普林斯顿大学|
+|家庭和伴侣|http://c.open.163.com/mob/video.htm?plid=M6QFLP2M8&mid=M6QFM8634|357万|加州大学洛杉矶分校|
+|方程组的几何解释|http://c.open.163.com/mob/video.htm?plid=M6V0BQC4M&mid=M6V29E773|355万|麻省理工|
+|请求的艺术|http://c.open.163.com/mob/video.htm?plid=M8OBIT7JO&mid=M8OBJE7QO|318万|【TED】这个脑洞缝不上|
+|如何成为一个更好的交谈者?|http://c.open.163.com/mob/video.htm?plid=MBFLN6BJF&mid=MBFLNJGFE|295万|TED首播|
+|你有拖延症吗?|http://c.open.163.com/mob/video.htm?plid=MBHQSM52F&mid=MBI15O7QE|294万|TED首播|
+
+关于播放次数,这里给出的和APP里的是一致的,但是网页版的播放次数以及评论数量都要比APP上高很多,这个具体是怎么计算的不得而知.
