@@ -5,8 +5,10 @@ key: 20190228
 ---
 
 最近公司要做一些关于图片的业务,遂学习一下相关知识.我在学习一项新技术的时候,习惯是先找几本比较好的书籍来看,然后在考虑实际场景.这次找了两本书:  
+
 1. [Digital Image Processing 4th Edition [Rafael C. Gonzalez]](https://pan.baidu.com/s/1uWnysDUVW3dm68e4ZCoqSQ)
 2. [Learning OpenCV 3--Computer Vision in C++ with the OpenCV Library](https://1024ebook.ctfile.com/fs/3124774-338165445)  
+
 第一本就是比较有名的"数字图像处理",第三版有中文版,但是很多吐槽翻译的太烂,所以这里我就选择了第四版的英文来看.第二本比较偏实践的,正文含很多可执行代码,可以用来练手.两本书我是一起看的(虽然在内容是两本书没啥关联).我安装的是OpenCV 4.0.1,书是关于OpenCV 3的,但是语法差不多.另外有一本"Learning OpenCV"版本较老,书中代码在OpenCV 4环境下无法执行,所以还是不要看了.
 
 ## 安装
@@ -85,6 +87,7 @@ make
 ```
 
 ### 3.使用Clion
+
 在Clion中新建*C++ Executable*项目,修改main.cpp为:
 ```c++
 #include <opencv2/opencv.hpp>
@@ -113,3 +116,22 @@ target_link_libraries( learning_opencv3 ${OpenCV_LIBS} )
 ```
 执行build,即在cmake-build-debug目录下生成display-picture可执行文件.
 ![20190228204758](https://user-images.githubusercontent.com/9245002/53567513-65c62e80-3b9a-11e9-9278-e35999a155cc.png)
+
+### 安装Java开发环境
+首先检查Apache Ant有没有安装,没有的话就用homebrew安装:brew install ant
+
+编辑homebrew的opencv formula: `brew edit opencv`,把这一行:`-DBUILD_opencv_java=OFF` 改为 `-DBUILD_opencv_java=ON`,就可以下载opencv了:`brew install --build-from-source opencv`
+
+### 在IntelliJ IDEA中使用OpenCV
+安装的opencv位于`/usr/local/Cellar/opencv/4.x.x`,jar文件位于`/usr/local/Cellar/opencv/4.x.x/share/java/opencv4`
+
+打开IDEA,选择File->Project Structure->Libraries,点击+号,选择Java,在文件系统中找到opencv-410.jar,将库的名字改为opencv_java410,OK.如下图所示
+![image](https://user-images.githubusercontent.com/9245002/57754380-e0760300-7720-11e9-9b03-79aa76869ae3.png)
+
+通过添加VM参数指定库的位置(Run->Edit Configurations...).如果纯java项目可以在main函数所在的类添加VM参数.
+![image](https://user-images.githubusercontent.com/9245002/57757289-b70ca580-7727-11e9-9d45-0f98bbea6b4e.png)
+
+
+在使用运行opencv前加载库,这里`NATIVE_LIBRARY_NAME`的值应与我们设置的库名相同,即*opencv_java410*
+![image](https://user-images.githubusercontent.com/9245002/57757565-4d40cb80-7728-11e9-9a50-0f754283df85.png)
+
