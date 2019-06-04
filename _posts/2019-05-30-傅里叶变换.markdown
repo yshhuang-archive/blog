@@ -13,12 +13,11 @@ key: 20190531
 
 假设，f(x)为周期为T的函数，并且满足傅立叶级数的收敛条件，那么可以写作傅立叶级数：
 
-$$\displaystyle f(x)={\frac{a_{0}}{2}}+\sum _{{n=1}}^{\infty}\left(a_{n}\cos({\tfrac  {2\pi nx}{T}})+b_{n}\sin({\tfrac  {2\pi nx}{T}})\right)$$
+$$f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos(\tfrac{2\pi nx}{T})+b_n\sin(\tfrac  {2\pi nx}{T}))$$
 
 其中：
-$$\displaystyle 
-a_{n}={\frac  {2}{T}}\int _{{x_{0}}}^{{x_{0}+T}}f(x)\cdot \cos({\tfrac  {2\pi nx}{T}})\ dx\\
-b_{n}={\frac  {2}{T}}\int _{{x_{0}}}^{{x_{0}+T}}f(x)\cdot \sin({\tfrac  {2\pi nx}{T}})\ dx$$
+$$ a_n=\frac2T\int_{x_0}^{x_0+T}f(x)\cdot \cos(\tfrac{2\pi nx}{T})\ dx\\
+b_n=\frac2T\int_{x_0}^{x_0+T}f(x)\cdot\sin(\tfrac{2\pi nx}{T})\ dx$$
 
 ### 1.直观解释
 
@@ -112,6 +111,33 @@ $$f(x)=C+\sum(a_n\cos(\cfrac{2πn}{T}x)+b_n\sin(\cfrac{2πn}{T}x)),C\in\R$$
 
 下面就要分析怎么确定这三个系数:
 $$C\quad a_n\quad b_n$$
+
+### 3.欧拉公式
+
+* 如何理解虚数
+
+我们都知道[虚数](https://zh.wikipedia.org/zh-cn/%E8%99%9A%E6%95%B0)$i$是$-1$的平方根,即$i=\sqrt{-1}$,这仅仅是虚数的定义.每一次数系扩张都是有实际含义的,负数可以对应"欠债,减少",分数对应"分割,部分",无理数对应"对角线的长度".那么虚数有什么实际含义呢.
+
+在数轴上有两个点,+1和-1,如果把代表+1的这根线段绕原点逆时针旋转$180\degree$,就到了-1的位置.逆时针旋转$180\degree$,也就相当于逆时针旋转$90\degree$两次,即:
+$$(+1)(逆时针旋转90\degree)(逆时针旋转90\degree)=-1$$
+如果把"逆时针旋转$90\degree$"记为$i$,上式就变为:
+$$i^2=-1$$
+这个式子和虚数的定义是一样的.所以我们可以这么认为:虚数i就是逆时针旋转$90\degree$,是一个旋转量.
+
+![image](https://user-images.githubusercontent.com/9245002/58786200-a01bed80-8619-11e9-92d4-fd0be5897af7.png)
+
+* 复数
+
+
+实数轴已经被自然数,整数,有理数,无理数塞满了,所以虚数只能向二维空间扩展,因此形成了[复平面](https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%B9%B3%E9%9D%A2)
+
+![image](https://user-images.githubusercontent.com/9245002/58849414-d52d4c00-86bc-11e9-9560-e014d5d3b159.png))
+
+在复平面上画一个单位圆，单位圆上的点可以用三角函数来表示
+
+![image](https://user-images.githubusercontent.com/9245002/58849493-19b8e780-86bd-11e9-829a-c509b03a9fb2.png)
+<!-- ![image](https://user-images.githubusercontent.com/9245002/58795972-9cdf2c80-862e-11e9-91ce-2256bf45d9d3.png) -->
+
 
 
 <!-- ## 参考资料: -->
