@@ -2,6 +2,7 @@
 title: 学习OpenCV4(二)-数字盲水印
 tags: c++ 图像处理 OpenCV 
 key: 20190514
+published: false
 ---
 
 ### 背景
