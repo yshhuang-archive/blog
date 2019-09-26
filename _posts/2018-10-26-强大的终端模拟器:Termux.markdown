@@ -5,7 +5,7 @@ tags: linux android
 key: 20181026
 ---
 我们现在使用的主流桌面系统都会自带命令行程序,Windows也不例外(Windows10推出了[Bash Shell](https://www.laptopmag.com/articles/use-bash-shell-windows-10)和[powershell](https://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting?view=powershell-6)),可见单独使用图形界面已经不能满足我们的需求了,特别是对我这种从事软件开发工作的人来说,一个系统中没有命令行会引起极度不适.但是我们常用的智能手机上就缺少这么一种方便的工具,目前的手机在硬件方面已经达到初级的桌面计算机的标准,比如我手里这款两年前买的小米5sp,4核6G内存128G存储空间,在上面运行一些常规软件完全不是问题.
-![android.settings](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-12-09-21-125_com.android.settings.png)
+![image](https://user-images.githubusercontent.com/9245002/65677933-0a531500-e085-11e9-969f-7fb06c6aea19.png)
 大家都知道,Android是基于Linux内核,所以它本身就是就可以当做一台Linux主机来用(苹果手机的话好像必须要越狱,这里就不管他了),可以在上面安装Python,git,openssh,数据库等.Android是一个单用户图形化系统,功能主要是以应用的形式来呈献给用户,因此在系统上我们无法直接获取终端,也就无法使用丰富的Linux命令了.但是借助终端模拟器,可以实现这一需求.之前我也用过一些工具,但是都不太好用,就给卸载了,直到我发现了Tremux这款神器.
 
 ## 简介及安装
@@ -23,17 +23,17 @@ At first start a small base system is downloaded - desired packages can then be 
 
 [官网](https://termux.com/)  
 [Google Paly下载地址](https://play.google.com/store/apps/details?id=com.termux)
-![android.vending](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-14-50-16-777_com.android.vending.png)
+![image](https://user-images.githubusercontent.com/9245002/65677966-1c34b800-e085-11e9-930e-3d3bb87ac71a.png)
 
 下面👇是启动Termux之后的界面,底部的虚拟键盘有一些在Linux上经常用到但是手机键盘上没有的按键(音量键+q 显示/隐藏),截图中提示可以使用pkg命令来管理包,但是Termux也自带apt包管理器,并且维护着适合Android的库,有自己的软件源.
 
-![com.termux](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-14-54-01-066_com.termux.png)
+![image](https://user-images.githubusercontent.com/9245002/65678004-2951a700-e085-11e9-8fe8-2e52aa711879.png)
 
 ## 开始使用
 
 首先,打开Termux进入的home目录在Android系统中的位置是:/data/data/com.termux/files/home,
 另外环境变量$PREFIX=/data/data/com.termux/files/usr指向Termux的/usr目录,使用apt install vim 安装vim编辑器.
-![com.termux](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-15-39-28-372_com.termux.png)
+![image](https://user-images.githubusercontent.com/9245002/65678575-24d9be00-e086-11e9-9848-05b9678f958a.png)
 * 类型  
 这是一款大小只有几百K的apk，安装后可以在Android手机上搭建一个完整的Linux环境。
 * 工作方式  
@@ -93,8 +93,8 @@ Termux的openssh默认端口是8022
 ssh u0_a494@172.16.128.245 -p 8022
 ```
 如下分别是电脑连手机和手机连电脑的界面
-![mac](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/20181029162807.png)
-![android](https://raw.githubusercontent.com/yshhuang/picturesForMarkDown/master/Screenshot_2018-10-29-16-27-34-403_com.termux.png)
+![image](https://user-images.githubusercontent.com/9245002/65678075-46867580-e085-11e9-8c57-ba937e7e6d60.png)
+![image](https://user-images.githubusercontent.com/9245002/65678105-51410a80-e085-11e9-84da-a026d7ccf5b4.png)
 后面可以做什么事就请发挥你自己的想象力吧.
 
 ## 参考资料

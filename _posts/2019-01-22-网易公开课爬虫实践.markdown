@@ -98,6 +98,7 @@ def insert_movies(plid):
 <img width="800" src="https://user-images.githubusercontent.com/9245002/51839004-e5b26c00-2342-11e9-819e-e6132817194b.png">
 
 可以统计出最火(浏览次数最多)的内容,结果如下(截至2019-02-28)
+
 |标题|地址|观看次数|订阅号|
 |-|-|-|-|
 |爱情应有的样子|http://c.open.163.com/mob/video.htm?plid=MC9FQL66A&mid=MCA50R4D7|526万|TED首播|
