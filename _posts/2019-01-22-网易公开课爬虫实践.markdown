@@ -14,6 +14,7 @@ key: 20190122
 
 ## 数据抓取过程
 * 首先,网易公开课的内容都是通过订阅号发布的,所以我先抓取了所有订阅号的信息
+
 <img width="500" src="https://user-images.githubusercontent.com/9245002/51828496-a9711280-2326-11e9-8b94-17fc151d0d3b.jpeg">
 
 
@@ -40,7 +41,9 @@ def crawler_all_subscribe():
 * 同时在订阅号首页还有一个列出推送内容的接口:
   https://c.open.163.com/open/mob/subscribe/detail/list.do?subscribeId=3994&rtypes=2%2C3%2C4%2C5%2C6%2C8%2C9%2C10%2C11%2C12&cursor=&pagesize=10  
   这里使用游标cursor来分页,最新一页cursor为空,每次请求结果会返回下一页的cursor,如不返回则为最后一页.接口返回的data字段(数组)即为存入open163_content中的内容.
+
   <img width="1200" alt="20190128203135" src="https://user-images.githubusercontent.com/9245002/51836606-cb28c480-233b-11e9-998b-dc5fd7523389.png">
+
   其中,如果内容是视频类型的话,还会有一个plid字段,这个plid即为视频集合的唯一标识,通过抓取所有订阅号的所有内容,就可以获得所有视频集合的plid.
 
 ```python
@@ -70,7 +73,9 @@ def crawler_content_page(subscribeId, cursor=''):
     return content
 ```
 * 有了视频集合的plid,就可以通过这个接口来获取视频信息了:https://c.open.163.com/mob/${plid}/getMoviesForAndroid.do
+
 <img width="1353" alt="20190128210823" src="https://user-images.githubusercontent.com/9245002/51838315-e34f1280-2340-11e9-9966-8f84fd1ed186.png">
+
 返回结果中的data即为存入*open163*中的内容.
 ```python
 def insert_movies(plid):
@@ -95,6 +100,7 @@ def insert_movies(plid):
 可以看出,订阅数最多的都是一些subscribeId比较小的,这可能是因为最开始推出的订阅号都是一些竞品,审核比较严格,还有就是时间的积累,订阅用户因此比较多.
 
 然后,我们还可以看到有不少订阅号是没有发布内容的:
+
 <img width="800" src="https://user-images.githubusercontent.com/9245002/51839004-e5b26c00-2342-11e9-819e-e6132817194b.png">
 
 可以统计出最火(浏览次数最多)的内容,结果如下(截至2019-02-28)

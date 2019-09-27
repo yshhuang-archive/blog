@@ -115,6 +115,7 @@ add_executable(learning_opencv3 main.cpp)
 target_link_libraries( learning_opencv3 ${OpenCV_LIBS} )
 ```
 执行build,即在cmake-build-debug目录下生成display-picture可执行文件.
+
 ![20190228204758](https://user-images.githubusercontent.com/9245002/53567513-65c62e80-3b9a-11e9-9278-e35999a155cc.png)
 
 ### 安装Java开发环境
@@ -126,12 +127,15 @@ target_link_libraries( learning_opencv3 ${OpenCV_LIBS} )
 安装的opencv位于`/usr/local/Cellar/opencv/4.x.x`,jar文件位于`/usr/local/Cellar/opencv/4.x.x/share/java/opencv4`
 
 打开IDEA,选择File->Project Structure->Libraries,点击+号,选择Java,在文件系统中找到opencv-410.jar,将库的名字改为opencv_java410,OK.如下图所示
+
 ![image](https://user-images.githubusercontent.com/9245002/57754380-e0760300-7720-11e9-9b03-79aa76869ae3.png)
 
 通过添加VM参数指定库的位置(Run->Edit Configurations...).如果纯java项目可以在main函数所在的类添加VM参数.
+
 ![image](https://user-images.githubusercontent.com/9245002/57757289-b70ca580-7727-11e9-9d45-0f98bbea6b4e.png)
 
 
 在使用运行opencv前加载库,这里`NATIVE_LIBRARY_NAME`的值应与我们设置的库名相同,即*opencv_java410*
+
 ![image](https://user-images.githubusercontent.com/9245002/57757565-4d40cb80-7728-11e9-9a50-0f754283df85.png)
 
