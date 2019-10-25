@@ -1,7 +1,7 @@
 ---
 # layout: post
 title:  "强大的终端模拟器:Termux"
-tags: linux android
+tags: linux android termux
 key: 20181026
 ---
 我们现在使用的主流桌面系统都会自带命令行程序,Windows也不例外(Windows10推出了[Bash Shell](https://www.laptopmag.com/articles/use-bash-shell-windows-10)和[powershell](https://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting?view=powershell-6)),可见单独使用图形界面已经不能满足我们的需求了,特别是对我这种从事软件开发工作的人来说,一个系统中没有命令行会引起极度不适.但是我们常用的智能手机上就缺少这么一种方便的工具,目前的手机在硬件方面已经达到初级的桌面计算机的标准,比如我手里这款两年前买的小米5sp,4核6G内存128G存储空间,在上面运行一些常规软件完全不是问题.
@@ -38,6 +38,8 @@ At first start a small base system is downloaded - desired packages can then be 
 另外环境变量$PREFIX=/data/data/com.termux/files/usr指向Termux的/usr目录,使用apt install vim 安装vim编辑器.
 
 ![image](https://user-images.githubusercontent.com/9245002/65678575-24d9be00-e086-11e9-9848-05b9678f958a.png)
+
+## 特点
 
 * 类型  
 这是一款大小只有几百K的apk，安装后可以在Android手机上搭建一个完整的Linux环境。
