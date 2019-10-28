@@ -2,10 +2,9 @@
 title: springboot集成redis
 tags: springboot redis  
 key: 20191025
-published: false
 ---
 
-## 关于缓存
+<!-- ## 关于缓存 -->
 
 
 ## redis安装
@@ -33,3 +32,54 @@ published: false
    关闭 `service redis stop`
   4. 配置文件:`/etc/redis.conf`,修改方法和MacOS一样.
 
+## springboot项目中操作redis(使用Spring Data Redis)
+1. 在项目中添加依赖
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-pool2</artifactId>
+</dependency>
+```
+2. `application.properties`加入redis相关配置:
+```properties
+# REDIS (RedisProperties)
+# Redis数据库索引（默认为0）
+spring.redis.database=0
+# Redis服务器地址
+spring.redis.host=127.0.0.1
+# Redis服务器连接端口
+spring.redis.port=6379  
+# Redis服务器连接密码（默认为空）
+spring.redis.password=
+# 连接池最大连接数（使用负值表示没有限制）
+spring.redis.pool.max-active=8  
+# 连接池最大阻塞等待时间（使用负值表示没有限制）
+spring.redis.pool.max-wait=-1  
+# 连接池中的最大空闲连接
+spring.redis.pool.max-idle=8  
+# 连接池中的最小空闲连接
+spring.redis.pool.min-idle=0  
+# 连接超时时间（毫秒）
+spring.redis.timeout=0
+
+```
+3. 通过注入`StringRedisTemplate`或者`RedisTemplate`来使用
+```java
+@RestController
+public class MyController {
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
+    @GetMapping("hello")
+    public String hello(@RequestParam String value) {
+        ValueOperations<String, String> ops = redisTemplate.opsForValue();
+        ops.set("hello",value);
+        String result = ops.get("hello");
+        return result;
+    }
+}
+```
