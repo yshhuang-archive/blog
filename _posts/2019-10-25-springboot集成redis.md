@@ -2,6 +2,7 @@
 title: 关于缓存&springboot集成redis
 tags: springboot redis  
 key: 20191025
+published: false
 ---
 
 ## 关于缓存
