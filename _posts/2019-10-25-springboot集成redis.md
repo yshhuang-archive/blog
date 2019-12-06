@@ -1,10 +1,12 @@
 ---
-title: springboot集成redis
+title: 关于缓存&springboot集成redis
 tags: springboot redis  
 key: 20191025
 ---
 
-<!-- ## 关于缓存 -->
+## 关于缓存
+**缓存是一种保存资源副本并在下次请求时直接使用该副本的技术.**
+### 为何使用缓存
 
 
 ## redis安装
@@ -14,11 +16,11 @@ key: 20191025
     2. 启动 `brew services start redis`   
     关闭 `brew services stop redis`   
     查看状态 `brew services list|grep redis`
-    3. 设置密码   
+    1. 设置密码   
     安装的时候是没有设置密码的,需要的话可以自行设置.   
     修改配置文件 /usr/local/etc/redis.conf,找到"`#requirepass foobared`"(大概在500行),去掉注释,修改密码,例如改为:`requirepass 1234`,则将密码设为1234.   
     改完配置需要重启redis才能生效   `brew services restart redis`
-    4. 允许远程访问   
+    1. 允许远程访问   
     除需要开放服务器端口号6379，还需将配置文件中的bind 127.0.0.1注释掉
 + centos7安装redis(yum方法)
   1. 安装EPEL仓库   
@@ -83,3 +85,8 @@ public class MyController {
     }
 }
 ```
+
+## 参考资料:
+1. [系统性能提升利刃，缓存技术使用的实践与思考](https://www.infoq.cn/article/ORUHqcGub_XQ4Bbp8UKy)
+2. [缓存那些事](https://tech.meituan.com/2017/03/17/cache-about.html)
+3. [如何优雅的设计和使用缓存？](https://juejin.im/post/5b849878e51d4538c77a974a)
