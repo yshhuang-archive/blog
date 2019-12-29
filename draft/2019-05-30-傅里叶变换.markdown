@@ -1,0 +1,197 @@
+---
+title: 傅里叶变换
+tags: 信号处理 数学 
+key: 20190531
+---
+
+## 简介
+[傅里叶变换](https://zh.wikipedia.org/zh-cn/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)用于信号在时域(或空域)和频域之间的转换.实际上傅里叶变换就像化学分析,确定物质的基本成分;信号来自自然界,也可以对其进行分析,确定其基本成分.  
+经傅里叶变换生成的函数$\hat{f}$称作原函数$f$的傅里叶变换、亦称频谱。通常情况下,$f$是实数函数,而$\hat{f}$是复数函数,用一个复数来表示振幅和相位.
+
+## 傅里叶级数
+在数学中，傅里叶级数（Fourier series, /ˈfɔərieɪ/）是把类似波的函数表示成简单正弦波的方式。更正式地说，它能将任何周期函数或周期信号分解成一个（可能由无穷个元素组成的）简单振荡函数的集合，即正弦函数和余弦函数（或者，等价地使用复指数）.
+
+假设，f(x)为周期为T的函数，并且满足傅立叶级数的收敛条件，那么可以写作傅立叶级数：
+
+$$f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos(\tfrac{2\pi nx}{T})+b_n\sin(\tfrac  {2\pi nx}{T}))$$
+
+其中：
+$$ a_n=\frac2T\int_{x_0}^{x_0+T}f(x)\cdot \cos(\tfrac{2\pi nx}{T})\ dx\\
+b_n=\frac2T\int_{x_0}^{x_0+T}f(x)\cdot\sin(\tfrac{2\pi nx}{T})\ dx$$
+
+### 1.直观解释
+
+* 光的色散   
+光是一种波,而光的颜色由振幅和频率决定,光的色散就是将白色光分解为无数个(直观上分为7个)不同频率的光.  
+七色光波可以用正弦波$a_n\sin(nx)$来近似,其中$a_n$是振幅,$n$是频率.因此,白色光就可以用近似七色光的傅里叶级数来表示
+$$白色光=\sum_{n=1}^7 a_n\sin(nx)$$
+
+![光的色散](https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Prism_rainbow_schema.png/220px-Prism_rainbow_schema.png)
+
+### 2.周期函数的分解
+1. 傅里叶的猜想
+
+公元1822年，法国数学家、物理学家傅立叶(Joseph Fourier)将他在热传的研究成果出版成书Théorie analytique de la chaleur (英译The analytic theory of heat)，其中最重大的数学贡献是他提出了一个独特的正交分解展开式。傅立叶考虑单变量周期函数形成的向量空间，并以无限多个余弦和正弦函数构成单范正交集，因此设计出无穷级数形式的展开式，后人称为傅立叶级数(Fourier series) 。傅立叶宣称任何周期函数──不论连续与否──皆可用傅立叶级数表示。这个结果并不正确，德国数学家狄利克雷(Johann Peter Gustav Lejeune Dirichlet)率先给出一周期函数f(x)可展开成傅立叶级数的条件：
+* 此函数必须是有界的(bounded)，即对于任意$x，\vert f(x)\vert<M，M$是一正实数；
+* 在任意区间内，除了有限个不连续点，$f(x)$必须是连续函数；
+* 在任意区间内，$f(x)$必须仅包含有限个极值；
+* 在一周期内，$\vert f(x)\vert$的积分必须收敛。
+
+如下图所示,蓝色为周期为$2π$的锯齿波函数:
+$$s(x)=\cfrac{x}{π},\quad for\quad -π\lt x \lt π, \\\\
+s(x+2πk=s(x),\quad for -\infty \lt x \lt \infty\quad and\quad k \in \Z$$
+而红色的曲线是三角函数之和:$f(x)=2\sin(x)-\sin(2x)+\cfrac{2}{3}\sin(3x)-\cfrac{1}{2}\sin(4x)+\cfrac{2}{5}\sin(5x)$,可以看出随着项数的增加,二者逐渐接近
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Periodic_identity_function.gif/400px-Periodic_identity_function.gif)
+
+2. 分解的思路
+   
+假设f(x)是周期为T的函数，我们应该怎么构造三角函数的和，使之等于f(x)？
+
+* 常数项   
+
+对于$y=C,C\in\R$这样的函数,根据周期函数的定义,常数是周期函数,周期为任意实数.所以,分解里要有一个常数项.
+
+* 通过$\sin(x),\cos(x)$进行分解   
+
+首先,$\sin(x),\cos(x)$是周期函数,进行合理的加减组合,结果可以使周期函数.   
+其次,他们的微分和积分都很简单.   
+然后,$\sin(x)$是奇函数,即$\sin(x)=-\sin(-x)$,奇函数与奇函数加减只能得到奇函数,即$f_{odd}\pm f_{odd}=f_{odd}$.  
+而$\cos(x)$是偶函数,即:$\cos(x)=\cos(-x)$,同样的.偶函数与偶函数加减只能得到偶函数,即$f_{even}\pm f_{even}=f_{even}$.   
+但是任意函数可以分解为奇函数和偶函数之和:
+$$f(x)=\cfrac{f(x)+f(-x)}{2}+\cfrac{f(x)-f(-x)}{2}=f_{even}+f_{odd}$$
+所以同时需要$\sin(x),\cos(x)$.
+
+* 保证组合出来周期为$T$   
+
+比如上面说到的周期为$2π$的锯齿波函数
+![image](https://user-images.githubusercontent.com/9245002/58695978-3c9b8100-83c9-11e9-909e-bfa9e37e353c.png)
+
+很显然,$\sin(x)$的周期也是$2π$:
+![image](https://user-images.githubusercontent.com/9245002/58696087-66ed3e80-83c9-11e9-8794-a7bd5c555a8f.png)
+
+$\sin(2x)$的周期也是$2π$,虽然最小周期是$π$:
+
+![image](https://user-images.githubusercontent.com/9245002/58696976-4cb46000-83cb-11e9-89f0-0de5a07399ec.png)
+
+实际上$\sin(nx),x\in\N$的周期都是$2π$
+![image](https://user-images.githubusercontent.com/9245002/58697034-65bd1100-83cb-11e9-8895-bfba2a6a4c6c.png)
+
+一般的,如果$f(x)$的周期为$T$,那么:
+$$\sin(\cfrac{2πn}{T}) \quad \cos(\cfrac{2πn}{T}),\quad n\in\N$$
+z=这些函数的周期都为$T$.   
+将这些函数进行加减,就保证了得到的函数的周期也为$T$.
+
+* 调整振幅
+
+现在我们有一对周期为$2π$的函数,比如说$\sin(x),\sin(2x),\sin(3x),\sin(4x),\sin(5x)$:
+![image](https://user-images.githubusercontent.com/9245002/58698564-0dd3d980-83ce-11e9-89f2-96432142e0a3.png)
+
+通过调整振幅可以让他们慢慢接近目标函数,比如$\sin(x)$看起来处处都比目标函数低一些:
+![image](https://user-images.githubusercontent.com/9245002/58698571-12988d80-83ce-11e9-93a7-4747cd88a07a.png)
+
+把它的振幅增加一倍:   
+![image](https://user-images.githubusercontent.com/9245002/58698595-1cba8c00-83ce-11e9-8168-8093f2940787.png)
+
+$2\sin(x)$有的地方超出去了,从周期为$2π$的函数中选择一个,减去一点:
+![image](https://user-images.githubusercontent.com/9245002/58698611-22b06d00-83ce-11e9-9597-0e8af3c667ff.png)
+
+调整振幅，加加减减，我们可以慢慢接近目标函数:
+![image](https://user-images.githubusercontent.com/9245002/58701032-61492600-83d4-11e9-8b15-8eca96692b2f.png)
+
+* 小结   
+
+综上,构造出来的三角函数之和大概类似下面的样子
+$$f(x)=C+\sum(a_n\cos(\cfrac{2πn}{T}x)+b_n\sin(\cfrac{2πn}{T}x)),C\in\R$$
+这样就符合之前的分析:   
+* 有常数项
+* 奇函数和偶函数可以组合出任意函数
+* 周期为$T$
+* 调整振幅,逼近原函数
+
+下面就要分析怎么确定这三个系数:
+$$C\quad a_n\quad b_n$$
+
+### 3.复数
+
+* 如何理解虚数
+
+我们都知道[虚数](https://zh.wikipedia.org/zh-cn/%E8%99%9A%E6%95%B0)$i$是$-1$的平方根,即$i=\sqrt{-1}$,这仅仅是虚数的定义.每一次数系扩张都是有实际含义的,负数可以对应"欠债,减少",分数对应"分割,部分",无理数对应"对角线的长度".那么虚数有什么实际含义呢.
+
+在数轴上有两个点,+1和-1,如果把代表+1的这根线段绕原点逆时针旋转$180\degree$,就到了-1的位置.逆时针旋转$180\degree$,也就相当于逆时针旋转$90\degree$两次,即:
+$$(+1)(逆时针旋转90\degree)(逆时针旋转90\degree)=-1$$
+如果把"逆时针旋转$90\degree$"记为$i$,上式就变为:
+$$i^2=-1$$
+这个式子和虚数的定义是一样的.所以我们可以这么认为:虚数i就是逆时针旋转$90\degree$,是一个旋转量.
+
+![image](https://user-images.githubusercontent.com/9245002/58786200-a01bed80-8619-11e9-92d4-fd0be5897af7.png)
+
+* 复数
+
+实数轴已经被自然数,整数,有理数,无理数塞满了,所以虚数只能向二维空间扩展,因此形成了[复平面](https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%B9%B3%E9%9D%A2)
+
+![image](https://user-images.githubusercontent.com/9245002/58849414-d52d4c00-86bc-11e9-9560-e014d5d3b159.png))
+
+在复平面上画一个单位圆，单位圆上的点可以用三角函数来表示
+
+![image](https://user-images.githubusercontent.com/9245002/58849493-19b8e780-86bd-11e9-829a-c509b03a9fb2.png)
+
+一般情况
+![image](https://user-images.githubusercontent.com/9245002/58864439-484bb800-86e7-11e9-8d67-0e17902aa44d.png)
+
+设有两个复数:
+$$z_1=r_1(\cos\alpha+i\sin\alpha)\\
+z_2=r_2(\cos\beta+i\sin\beta)$$
+接下来进行乘法运算:
+$$z_1z_2=r_1r_2((\cos\alpha\cos\beta-\sin\alpha\sin\beta)+i(\cos\alpha\sin\beta+\sin\alpha\cos\beta))$$
+正好符合三角函数的和差化积公式:
+$$\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\\
+\sin(\alpha+\beta)=\cos\alpha\sin\beta+\sin\alpha\cos\beta$$
+所以,复数的乘法可以视为缩放(实部)与旋转(虚部)的组合
+![image](https://user-images.githubusercontent.com/9245002/58795972-9cdf2c80-862e-11e9-91ce-2256bf45d9d3.png)
+
+### 4.欧拉公式
+  
+对于$\theta\in\R$,有$e^{i\theta}=\cos\theta+i\sin\theta$   
+证明:   
+把函数$e^x,\cos{x},\sin{x}$写成泰勒级数形式:   
+$$e^x=1+x+\cfrac{x^2}{2!}+\cfrac{x^3}{3!}+……\\
+\cos{x}=1-\cfrac{x^2}{2!}+\cfrac{x^4}{4!}-\cfrac{x^6}{6!}+……\\
+\sin{x}=x-\cfrac{x^3}{3!}+\cfrac{x^5}{5!}-\cfrac{x^7}{7!}+……$$
+将$x=iz$代入$e^x$可得:
+$$e^{iz}=1+iz+\cfrac{(iz)^2}{2!}+\cfrac{(iz)^3}{3!}+\cfrac{(iz)^4}{4!}+\cfrac{(iz)^5}{5!}+\cfrac{(iz)^6}{6!}+\cfrac{(iz)^7}{7!}+\cfrac{(iz)^8}{8!}……\\
+=1+iz-\cfrac{z^2}{2!}-\cfrac{iz^3}{3!}+\cfrac{z^4}{4!}+\cfrac{iz^5}{5!}-\cfrac{z^6}{6!}-\cfrac{iz^7}{7!}+\cfrac{z^8}{8!}+……\\
+=(1-\cfrac{z^2}{2!}+\cfrac{z^4}{4!}-\cfrac{z^6}{6!}+\cfrac{z^8}{8!}-……)+i(z-\cfrac{z^3}{3!}+\cfrac{z^5}{5!}-\cfrac{z^7}{7!}+……)\\
+=\cos{z}+i\sin{z}$$
+
+* 几何意义
+
+首先,$e$的定义为:   
+$$e=\lim_{n\rightarrow\infty}(1+\cfrac{1}{n})^n$$
+根据如下定理:   
+$如果f(x),φ(x)是定义在区间(-\infty,+\infty)上的两个函数,\lim_{x\rightarrow\infty}f(x)=0且\lim_{x\rightarrow\infty}f(x)φ(x)=k\neq0,则有$
+$$\lim_{x\rightarrow\infty}[1+f(x)]^{φ(x)}=e^k.$$
+
+证明过程:  https://github.com/yshhuang/picturesForMarkDown/issues/2#issuecomment-501685756
+
+令$f(x)=\cfrac{i}{x},φ(x)=x,则k=i$,带入上式,可得
+$$\lim_{x\rightarrow\infty}(1+\cfrac{i}{x})^x=e^i$$
+根据之前对复数乘法的描述，乘上$1+\cfrac{i}{x}$是进行伸缩和旋转运动，x取值不同，伸缩和旋转的幅度不同。
+![image](https://user-images.githubusercontent.com/9245002/59585648-9c0cc700-9113-11e9-961d-2ef7333fc8a4.png)
+![image](https://user-images.githubusercontent.com/9245002/59585713-b8a8ff00-9113-11e9-9ca4-8cb2cdaf386b.png)
+![image](https://user-images.githubusercontent.com/9245002/59585731-c2cafd80-9113-11e9-9067-49ac4977475a.png)
+从图上可以推出
+n
+→
+∞
+时，
+e
+i
+在单位圆上转动了1弧度。
+<!-- ![image](https://user-images.githubusercontent.com/9245002/59480413-1aa70180-8e93-11e9-8435-7184305cd3f8.png)
+![image](https://upload.wikimedia.org/wikipedia/commons/a/a5/ComplexSinInATimeAxe.gif) -->
+
+
+## 参考资料: 
+* [正弦曲线/正弦波的直观解释](https://zhuanlan.zhihu.com/p/45761661)
+* [傅里叶变换](https://zh.wikipedia.org/zh-cn/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)

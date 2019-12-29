@@ -1,0 +1,54 @@
+---
+title: 学习OpenCV4(二)-数字盲水印
+tags: c++ 图像处理 OpenCV 
+key: 20190514
+published: false
+---
+
+### 背景
+#### 三角函数
+![sin-cos](https://3-im.guokr.com/kUXyITQCmHXEUsZjXEEsuQVlHP3_J2Wr1z0YT41VINf0AQAALAEAAEdJ.gif)
+1. 三角函数之正交性
+$$\int_{-π}^π\sin{mx}\sin{nx}\mathrm{d}x=\begin{cases}
+0,\quad for\quad m \neq n \\\\
+π,\quad for\quad m = n
+\end{cases}$$
+$$\int_{-π}^π\cos{mx}\cos{nx}\mathrm{d}x=\begin{cases}
+0,\quad for\quad m \neq n \\\\
+π,\quad for\quad m = n
+\end{cases}$$
+$$\int_{-π}^π\sin{mx}\cos{nx}\mathrm{d}x=0,\quad for\quad any\quad m\quad and\quad n$$
+
+**`证明`**:  
+* 正余弦函数在函数的一个周期内的积分都是0        
+  $$\int \sin{cx}\mathrm{d}x= -\cfrac{1}{c}\cos{cx}$$
+  $$\int \cos{cx}\mathrm{d}x=\cfrac{1}{c} \sin{cx} $$
+
+  ![800px-Sine_cosine_plot svg](https://user-images.githubusercontent.com/9245002/58311832-81a93b80-7e3c-11e9-8dfd-c0fa0c54dcc1.png)
+
+$$\int_{-π}^π\sin(mx)\sin(nx)\mathrm{d}x=\cfrac{1}{2}\int_{-π}^π\{\cos[(m-n)x]-\cos[(m+n)x]\}\mathrm{d}x=\cfrac{1}{2}\int_{-π}^π\cos[(m-n)x]\mathrm{d}x-\cfrac{1}{2}\int_{-π}^πcos[(m+n)x]\mathrm{d}x=0$$
+$$\int_{-π}^π\cos(mx)\cos(nx)\mathrm{d}x=\cfrac12\int_{-π}^π\{\cos[(m-n)x]+\cos[(m+n)x]\}\mathrm{d}x=\cfrac12\int_{-π}^π\cos[(m-n)x]\mathrm{d}x+\cfrac{1}{2}\int_{-π}^π\cos[(m+n)x]\mathrm{d}x=0$$
+$$\int_{-π}^π\sin(mx)\cos(nx)$$
+[三角函数值正交性](https://ocw.chu.edu.tw/pluginfile.php/861/mod_resource/content/14/Summary_259.pdf)
+<!-- 数字图像,信号处理,傅里叶变换 -->
+
+### java实现
+1. 读入原图
+Mat是OpenCV最常用的类,用它来存储一个图片的所有信息.先记下原图的宽高,后面会用到
+```java
+Mat inputImg=imread(inputImage);
+int w=inputImg.cols();
+int h=inputImg.rows();
+```
+
+2. 优化尺寸
+
+```java
+public static Mat optimizeMatSize(Mat mat) {
+        Mat padded=new Mat();
+        Core.copyMakeBorder(mat,padded,0,mat.rows() % 2,0,mat.cols() % 2,Core.BORDER_CONSTANT,Scalar.all(0));
+        return padded;
+    }
+```
+
+

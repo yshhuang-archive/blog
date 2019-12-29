@@ -1,0 +1,121 @@
+---
+title: 网易公开课爬虫实践
+tags: python 爬虫 英语学习 
+key: 20190122
+---
+## 结果
+这次先说结果吧,截止到目前(2019-01-28)位置总共爬了网易公开课4296个订阅号(有的订阅号是没有内容的),409030条内容(视频或者文章),243413个视频集合,内容里面的视频和视频集合里的视频是有重叠的.分别保存到*open163_subscribe,open163_content,open163*,3个collection的结构如下
+
+<img width="800" src="https://user-images.githubusercontent.com/9245002/51821939-b0dbf000-2315-11e9-82dd-d09ae240cf7e.png">
+
+<img width="800" src="https://user-images.githubusercontent.com/9245002/51821942-b1748680-2315-11e9-9c20-138716f838d2.png">
+
+<img width="800" alt="20190128144850" src="https://user-images.githubusercontent.com/9245002/51821940-b0dbf000-2315-11e9-8f1b-35bff5cbf355.png">
+
+## 数据抓取过程
+* 首先,网易公开课的内容都是通过订阅号发布的,所以我先抓取了所有订阅号的信息
+
+<img width="500" src="https://user-images.githubusercontent.com/9245002/51828496-a9711280-2326-11e9-8b94-17fc151d0d3b.jpeg">
+
+
+通过在浏览器里调试订阅号的首页,可以发现获取订阅号的接口:https://c.open.163.com/open/mob/subscribe/detail/info.do?subscribeId=  
+集合open163_subscribe保存的就是这个接口返回的信息.而且还发现订阅号的唯一标识subscribeId是数字的形式,所以只要从1开始自增就可以遍历所有的订阅号了(当然有的subscribeId是没有订阅号的,有可能是下架了,跳过就好)
+```python
+def crawler_all_subscribe():
+    empty = 0
+    subscribeId = 4080
+    while empty < 100:
+        subscribe = crawler_subscribe(subscribeId)
+        if 'subscribeName' in subscribe.keys():
+            print(subscribe['subscribeName'])
+            insert_subscribe(subscribe)
+            crawler_content(subscribeId)
+            empty = 0
+        else:
+            empty = empty + 1
+        subscribeId = subscribeId + 1
+```
+
+<img width="1369" alt="20190128203135" src="https://user-images.githubusercontent.com/9245002/51828561-cc032b80-2326-11e9-9a1a-aec8855228e0.png">
+
+* 同时在订阅号首页还有一个列出推送内容的接口:
+  https://c.open.163.com/open/mob/subscribe/detail/list.do?subscribeId=3994&rtypes=2%2C3%2C4%2C5%2C6%2C8%2C9%2C10%2C11%2C12&cursor=&pagesize=10  
+  这里使用游标cursor来分页,最新一页cursor为空,每次请求结果会返回下一页的cursor,如不返回则为最后一页.接口返回的data字段(数组)即为存入open163_content中的内容.
+
+  <img width="1200" alt="20190128203135" src="https://user-images.githubusercontent.com/9245002/51836606-cb28c480-233b-11e9-998b-dc5fd7523389.png">
+
+  其中,如果内容是视频类型的话,还会有一个plid字段,这个plid即为视频集合的唯一标识,通过抓取所有订阅号的所有内容,就可以获得所有视频集合的plid.
+
+```python
+def crawler_content(subscribeId):
+    content = []
+    cursor = ''
+    result = crawler_content_page(subscribeId, cursor)
+    while 'data' in result.keys() and 'cursor' in result.keys():
+        content = content + result['data']
+        cursor = result['cursor']
+        result = crawler_content_page(subscribeId, cursor)
+    if 'data' in result.keys():
+        content = content + result['data']
+    print(len(content))
+    insert_contents(content)
+
+
+def crawler_content_page(subscribeId, cursor=''):
+    # print(subscribe_url_prefix)
+    url = content_url_prefix + '&subscribeId=' + str(
+        subscribeId) + '&cursor=' + cursor
+    response = urllib.request.urlopen(url)
+    result = response.read().decode('utf-8')
+    content = json.loads(result)
+    if content is None or 'data' not in content.keys():
+        return {}
+    return content
+```
+* 有了视频集合的plid,就可以通过这个接口来获取视频信息了:https://c.open.163.com/mob/${plid}/getMoviesForAndroid.do
+
+<img width="1353" alt="20190128210823" src="https://user-images.githubusercontent.com/9245002/51838315-e34f1280-2340-11e9-9966-8f84fd1ed186.png">
+
+返回结果中的data即为存入*open163*中的内容.
+```python
+def insert_movies(plid):
+    try:
+        response = urllib.request.urlopen(movies_url_prefix + plid + movies_url_suffix)
+        result = response.read().decode('utf-8')
+        data = json.loads(result)
+        if data['code'] == 200:
+            try:
+                collection.insert_one(data['data'])
+            except pymongo.errors.DuplicateKeyError:
+                pass
+    except:
+        print(plid)
+```
+
+## 分析
+收集了这么多数据,可以用来做一些分析了,比如,可以看一下那些订阅号最受欢迎:
+
+<img width="800" src="https://user-images.githubusercontent.com/9245002/51838939-b26fdd00-2342-11e9-8682-4063c841b3d9.png">
+
+可以看出,订阅数最多的都是一些subscribeId比较小的,这可能是因为最开始推出的订阅号都是一些竞品,审核比较严格,还有就是时间的积累,订阅用户因此比较多.
+
+然后,我们还可以看到有不少订阅号是没有发布内容的:
+
+<img width="800" src="https://user-images.githubusercontent.com/9245002/51839004-e5b26c00-2342-11e9-819e-e6132817194b.png">
+
+可以统计出最火(浏览次数最多)的内容,结果如下(截至2019-02-28)
+
+|标题|地址|观看次数|订阅号|
+|-|-|-|-|
+|爱情应有的样子|http://c.open.163.com/mob/video.htm?plid=MC9FQL66A&mid=MCA50R4D7|526万|TED首播|
+|口才概述|http://c.open.163.com/mob/video.htm?plid=M7GH4L3UO&mid=M7GHH3BUN|416万|北京航空航天大学|
+|导论：王阳明与阳明心学|http://c.open.163.com/mob/video.htm?plid=M7GF17HPS&mid=M7GHGQTFG|390万|浙江大学|
+|提升自信的技巧|http://c.open.163.com/mob/video.htm?plid=MBOR278SK&mid=MBP8E2U4J|388万|【TED】Day Day Up|
+|副总裁珍妮特迪克森-院校中的爱与包容|http://c.open.163.com/mob/video.htm?plid=M6G3D585I&mid=M6G3JGJCJ|364万|普林斯顿大学|
+|家庭和伴侣|http://c.open.163.com/mob/video.htm?plid=M6QFLP2M8&mid=M6QFM8634|357万|加州大学洛杉矶分校|
+|方程组的几何解释|http://c.open.163.com/mob/video.htm?plid=M6V0BQC4M&mid=M6V29E773|355万|麻省理工|
+|请求的艺术|http://c.open.163.com/mob/video.htm?plid=M8OBIT7JO&mid=M8OBJE7QO|318万|【TED】这个脑洞缝不上|
+|如何成为一个更好的交谈者?|http://c.open.163.com/mob/video.htm?plid=MBFLN6BJF&mid=MBFLNJGFE|295万|TED首播|
+|你有拖延症吗?|http://c.open.163.com/mob/video.htm?plid=MBHQSM52F&mid=MBI15O7QE|294万|TED首播|
+
+关于播放次数,这里给出的和APP里的是一致的,但是网页版的播放次数以及评论数量都要比APP上高很多,这个具体是怎么计算的不得而知.

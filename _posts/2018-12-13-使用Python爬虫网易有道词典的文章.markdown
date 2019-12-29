@@ -14,11 +14,15 @@ key: 20181213
 ## 准备工作
 
 1. 设置手机HTTP代理：确保移动设备与 Mac 笔记本在同一局域网内，添加代理ip地址（Mac内网地址）和端口号（8888）,如图所示：
+   
 ![wechatimg2](https://user-images.githubusercontent.com/9245002/51451163-f8d7a180-1d6e-11e9-827b-76d9c533b38f.jpeg)
+
 2. 在 Mac 中打开 Charles 应用
 3. 在移动端访问接口数据，在 Charles 弹出的确认窗中选择 Allow，允许即可
 4. 这里,我们浏览有道晨读的专栏主页,在Charles中找到获取文章列表的接口:http://dict.youdao.com/infoline/style?client=mobile&apiversion=3.0&lastId=0&style=morning&order=desc&size=10&keyfrom=mdict.7.8.5.android&model=MI_5s_Plus&mid=8.0.0&imei=99000828489816&vendor=xiaomi&screen=1080x1920&ssid=kkmh-2.4&network=wifi&abtest=0.
+   
  ![wechatimg1](https://user-images.githubusercontent.com/9245002/51451162-f70dde00-1d6e-11e9-80dd-edcd3b71007f.jpeg)
+
 ![20190121105502](https://user-images.githubusercontent.com/9245002/51451159-efe6d000-1d6e-11e9-92b5-f2550bbde294.png)
 
 
@@ -58,7 +62,9 @@ def save_articles():
     insert_into_mysql()
 ```
 其实用这种方法只能获取到"有道晨读"栏目的最新500篇文章,再旧点的文章通过这个接口就获取不到了.不过,通过在浏览器中查看文章的详情页,找到了一个根据文章的pid(有道词典的文章编号)获取文章详情的接口:http://xue.youdao.com/sw/m/1417209?showmethod=native .返回结果里有一个related字段,就是页面上的相关阅读,是不是可以通过递归的访问文章的related就可以遍历所有的文章?试了一下,结果发现只有一部分文章会出现在related里,有一些永远不会出现,而且最新的文章都不出现的related里的.  
+
 ![20190121142930](https://user-images.githubusercontent.com/9245002/51456621-5bd63200-1d89-11e9-9cce-c3fd6f624c56.png)
+
 不过,我发现这个接口里的文章pid都是数字,我只要不停改变这个数字应该就能获取所有文章了.而且小于1000000的pid是没有文章的,在当时(2018-12-13)最新的文章pid在1600000~1700000.所以我先爬取1000000~1600000的旧数据,再以后每次想更新文章库的时候可以根据已经爬取的最大pid来爬取新的数据.  
 我一开始是用的MySQL来存储爬取到的文章,但是后来发现文章的字段格式不太规范,总是出现空字段或者字符串过长等问题,写了好多控制判断之类的,好麻烦,后来索性用MongoDB来存储,方便了很多,直接插入一个json就行了.
 
@@ -99,8 +105,11 @@ def insert_article(article):
 
 ## 成果
 截止到2019-01-21更新,已经爬了30多万篇文章,而且信息很详细,包含文章内容(html格式),栏目,标签,音视频链接(如果有)等.
+
 ![20190121152842](https://user-images.githubusercontent.com/9245002/51458793-6694c500-1d91-11e9-9a44-e7a6b8257430.png)
+
 ![20190121152831](https://user-images.githubusercontent.com/9245002/51458799-698fb580-1d91-11e9-9a67-545f356c50b3.png)
 
 查一下<小王子>连载的文章,看了一下还不错.  
+
 ![20190121154107](https://user-images.githubusercontent.com/9245002/51459344-32ba9f00-1d93-11e9-849f-658d6a856ffa.png)

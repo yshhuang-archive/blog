@@ -1,18 +1,29 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+    user-scalable=no">
 
 {%- include snippets/get-article-title.html article=page -%}
-<title>{%- if __return -%}{{ __return }} - {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
 
-<meta name="description" content="{%- if page.excerpt -%}{{ page.excerpt | strip_html | strip_newlines | strip | truncate: 160 }}{%- else -%}{{ site.description }}{%- endif -%}">
+
+<title>
+    {%- if __return -%}{{ __return }} - {{ site.title }}{%- else -%}{{
+    site.title }}{%- endif -%}
+</title>
+
+<meta name="description" content="{%- if page.excerpt -%}{{ page.excerpt |
+    strip_html | strip_newlines | strip | truncate: 160 }}{%- else -%}{{
+    site.description }}{%- endif -%}">
 <link rel="canonical" href="{%- include snippets/page-url.html -%}">
 
-{%- assign _paths_rss = site.paths.rss | default: site.data.variables.default.paths.rss -%}
+{%- assign _paths_rss = site.paths.rss | default:
+site.data.variables.default.paths.rss -%}
 {%- include snippets/get-nav-url.html path=_paths_rss -%}
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ __return }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}"
+    href="{{ __return }}">
 <!-- begin favicon -->
-{%- include snippets/prepend-baseurl.html path='/assets/apple-touch-icon.png' -%}
+{%- include snippets/prepend-baseurl.html path='/assets/apple-touch-icon.png'
+-%}
 <link rel="apple-touch-icon" sizes="180x180" href="{{ __return }}">
 
 {%- include snippets/prepend-baseurl.html path='/assets/favicon-32x32.png' -%}
@@ -24,7 +35,8 @@
 {%- include snippets/prepend-baseurl.html path='/assets/site.webmanifest' -%}
 <link rel="manifest" href="{{ __return }}">
 
-{%- include snippets/prepend-baseurl.html path='/assets/safari-pinned-tab.svg' -%}
+{%- include snippets/prepend-baseurl.html path='/assets/safari-pinned-tab.svg'
+-%}
 <link rel="mask-icon" href="{{ __return }}" color="#fc4d50">
 
 {%- include snippets/prepend-baseurl.html path='/assets/favicon.ico' -%}
@@ -43,4 +55,4 @@
 
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
-<link rel="stylesheet" href="{{ _sources.font_awesome }}" >
+<link rel="stylesheet" href="{{ _sources.font_awesome }}">
