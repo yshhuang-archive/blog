@@ -139,3 +139,42 @@ target_link_libraries( learning_opencv3 ${OpenCV_LIBS} )
 
 ![image](https://user-images.githubusercontent.com/9245002/57757565-4d40cb80-7728-11e9-9a50-0f754283df85.png)
 
+### 安装python开发环境
+1. 使用`pip`安装:
+> pip3 install opencv-python
+
+2. 安装`extra modules` 
+
+*注意*: `extra modules`是包含`main modules`的,为避免冲突,需要先删除之前安装的opencv-python(手动安装的也要删除)
+> pip3 uninstall opencv-python   
+  pip3 install opencv-contrib-python
+
+[opencv-contrib-python使用文档](https://pypi.org/project/opencv-contrib-python/)
+
+3. 使用低版本的`extra modules`
+
+因为`opencv-contrib-python` 4.x 不再支持一些非免费算法(如SIFT,SURF),如果需要使用这些算法的,可以使用低版本的`opencv-contrib-python`,如`opencv-contrib-python==3.4.2.17`,详情见[issues](https://github.com/skvark/opencv-python/issues/126)
+
+### 在PyCharm中使用opencv-python
+
+安装好`opencv-python`或者`opencv-contrib-python`就可以直接用了,但是在PyCharm中编辑的时候cv2模块没有自动补全功能,所以需要手动配置
+
+1. 查看python的site-packages路径
+
+> python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"
+
+在MacOS下输出的是:
+>/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
+
+因为这个路径下的site-packages其实是一个软连接,连接到目录:/usr/local/lib/python3.7/site-packages
+
+2. 添加cv2的库到PYTHONPATH
+   
+   `opencv-python`的库文件没有直接放在python的`site-packages`,而是放在`site-packages`下的`cv2/data`中,所以需要将`cv2/data`的路径添加到`Interpreter Paths`,具体步骤如下所示
+
+   ![image](https://user-images.githubusercontent.com/9245002/71977564-0f169000-3254-11ea-9002-b56ef5ec652b.png)
+![image](https://user-images.githubusercontent.com/9245002/71977588-2190c980-3254-11ea-8548-890e0613996d.png)
+![image](https://user-images.githubusercontent.com/9245002/71977656-5270fe80-3254-11ea-9ba4-2e6b15248464.png)
+
+完成之后,PyCharm就可以自动补全opencv的函数了:
+![image](https://user-images.githubusercontent.com/9245002/71977983-2f931a00-3255-11ea-8d74-3702daad7099.png)
