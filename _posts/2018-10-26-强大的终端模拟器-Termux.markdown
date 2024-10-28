@@ -1,6 +1,6 @@
 ---
 # layout: post
-title:  "强大的终端模拟器:Termux"
+title:  "强大的终端模拟器-Termux"
 tags: linux android termux
 key: 20181026
 ---
